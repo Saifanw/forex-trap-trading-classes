@@ -1,0 +1,1 @@
+# forex-trap-trading-classes
