@@ -486,12 +486,13 @@
         font-size: 12px;
     }
 }
-/* ===== COMPACT PREMIUM TELEGRAM BAR ===== */
+/* ===== PREMIUM TELEGRAM BAR ===== */
 
 .premium-telegram {
-    padding: 6px 10px;
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    padding: 9px 15px;
+    background: linear-gradient(90deg, #111827, #1e293b, #111827);
+    border-bottom: 1px solid #334155;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
 }
 
 .premium-content {
@@ -500,7 +501,103 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Telegram title */
+
+.premium-content h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Price */
+
+.premium-price {
+    color: #facc15;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Membership text */
+
+.premium-content p {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+/* Join button */
+
+.premium-button {
+    display: inline-block;
+    padding: 7px 13px;
+    background: linear-gradient(135deg, #229ED9, #168dcc);
+    color: white !important;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: 0 2px 8px rgba(34,158,217,0.35);
+    transition: 0.2s;
+}
+
+.premium-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(34,158,217,0.5);
+}
+
+/* Location */
+
+.location-button {
+    display: inline-block;
+    padding: 6px 10px;
+    background: #1e293b;
+    color: #e2e8f0 !important;
+    text-decoration: none;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.location-button:hover {
+    background: #334155;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .premium-telegram {
+        padding: 8px 10px;
+    }
+
+    .premium-content {
+        gap: 7px;
+    }
+
+    .premium-content h3 {
+        font-size: 12px;
+    }
+
+    .premium-price,
+    .premium-content p {
+        font-size: 12px;
+    }
+
+    .premium-button {
+        padding: 6px 9px;
+        font-size: 11px;
+    }
+
+    .location-button {
+        padding: 5px 8px;
+        font-size: 11px;
+    }
 }
 
 .premium-icon {
