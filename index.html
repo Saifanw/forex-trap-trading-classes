@@ -489,10 +489,10 @@
 /* ===== PREMIUM TELEGRAM BAR ===== */
 
 .premium-telegram {
-    padding: 9px 15px;
-    background: linear-gradient(90deg, #111827, #1e293b, #111827);
+    padding: 8px 12px;
+    background: linear-gradient(90deg, #0f172a, #172554, #0f172a);
     border-bottom: 1px solid #334155;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
 .premium-content {
@@ -503,6 +503,75 @@
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.premium-content p {
+    margin: 0;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.premium-price {
+    color: #facc15 !important;
+    font-weight: 700;
+}
+
+.premium-button {
+    display: inline-block;
+    padding: 7px 14px;
+    background: #229ed9;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.premium-button:hover {
+    background: #168ac0;
+    transform: translateY(-1px);
+}
+
+.location-button {
+    display: inline-block;
+    padding: 6px 10px;
+    background: #ffffff;
+    color: #172554 !important;
+    text-decoration: none;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 2px;
+}
+
+.location-button:hover {
+    background: #f1f5f9;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .premium-telegram {
+        padding: 7px 8px;
+    }
+
+    .premium-content {
+        gap: 7px;
+        font-size: 12px;
+    }
+
+    .premium-button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .location-button {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
 }
 
 /* Telegram title */
