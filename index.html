@@ -144,6 +144,85 @@
 
 
     /* =========================
+       LOCATION CARD
+       ========================= */
+
+    .location-section {
+      max-width: 1100px;
+      padding-top: 15px;
+      padding-bottom: 45px;
+    }
+
+    .location-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 25px 28px;
+      box-shadow: 0 6px 20px rgba(15,23,42,.06);
+    }
+
+    .location-kicker {
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .7px;
+      margin-bottom: 5px;
+    }
+
+    .location-copy h2 {
+      text-align: left;
+      margin: 0 0 7px;
+      font-size: 23px;
+      color: #0f172a;
+    }
+
+    .location-copy p {
+      color: #64748b;
+      margin-bottom: 15px;
+    }
+
+    .map-cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 13px;
+      border-radius: 8px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .map-cta:hover { background:#dbeafe; }
+
+    .location-visual {
+      min-width: 125px;
+      height: 105px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg,#eff6ff,#f8fafc);
+      border: 1px solid #dbeafe;
+      font-size: 34px;
+      line-height: 1.05;
+    }
+
+    .location-visual small {
+      color:#475569;
+      font-size:12px;
+      font-weight:700;
+      line-height:1.35;
+    }
+
+    /* =========================
        COMMENTS SECTION
        ========================= */
 
@@ -486,135 +565,193 @@
         font-size: 12px;
     }
 }
-/* ===== COMPACT PREMIUM TELEGRAM BAR ===== */
+/* ===== PROFESSIONAL PREMIUM + LOCATION BAR ===== */
 
 .premium-telegram {
-    padding: 6px 10px;
-    background: #f8fafc;
-    border-bottom: 1px solid #e2e8f0;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+    padding: 7px 14px;
 }
 
 .premium-content {
-    max-width: 1100px;
-    margin: auto;
+    max-width: 1180px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    flex-wrap: nowrap;
+    min-height: 42px;
 }
 
-/* Telegram title */
+.premium-icon { display:none; }
 
-.premium-content h3 {
-    margin: 0;
-    color: #0f172a;
-    font-size: 13px;
-    font-weight: 700;
+.premium-main {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     white-space: nowrap;
 }
 
-/* Price */
+.premium-title {
+    color: #111827;
+    font-size: 13px;
+    font-weight: 800;
+}
 
 .premium-price {
-    color: #f59e0b;
-    font-weight: 700;
+    color: #d97706;
     font-size: 13px;
+    font-weight: 800;
     white-space: nowrap;
 }
 
-/* Membership text */
-
-.premium-content p {
+.premium-membership {
     margin: 0;
-    color: #475569;
-    font-size: 13px;
+    color: #64748b;
+    font-size: 12px;
     white-space: nowrap;
 }
 
-/* Join button */
+.premium-features,
+.premium-info,
+.premium-note { display:none; }
 
 .premium-button {
-    display: inline-block;
-    padding: 6px 11px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 13px;
     background: linear-gradient(135deg, #229ED9, #168dcc);
     color: #ffffff !important;
     text-decoration: none;
-    border-radius: 6px;
-    font-weight: 700;
+    border-radius: 7px;
+    font-weight: 800;
     font-size: 12px;
     white-space: nowrap;
-    box-shadow: 0 2px 6px rgba(34,158,217,0.25);
-    transition: 0.2s;
+    box-shadow: 0 3px 9px rgba(34,158,217,0.24);
+    transition: transform .18s ease, box-shadow .18s ease;
 }
 
 .premium-button:hover {
     transform: translateY(-1px);
-    box-shadow: 0 3px 9px rgba(34,158,217,0.35);
+    box-shadow: 0 5px 13px rgba(34,158,217,0.32);
 }
 
-/* Location button */
-
 .location-button {
-    display: inline-block;
-    padding: 6px 10px;
-    background: #ffffff;
-    color: #334155 !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 11px;
+    background: #f8fafc;
+    color: #1e293b !important;
     text-decoration: none;
     border: 1px solid #cbd5e1;
-    border-radius: 6px;
+    border-radius: 7px;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
     white-space: nowrap;
-    transition: 0.2s;
+    transition: background .18s ease, border-color .18s ease, transform .18s ease;
 }
 
 .location-button:hover {
-    background: #f1f5f9;
-    border-color: #94a3b8;
+    background: #eff6ff;
+    border-color: #93c5fd;
+    transform: translateY(-1px);
 }
 
-/* ===== MOBILE ===== */
+.location-button span {
+    color: #2563eb;
+}
+
+/* Make the hero start sooner and feel more premium */
+.hero {
+    padding: 38px 20px 48px;
+    background:
+      radial-gradient(circle at 12% 15%, rgba(37,99,235,.055), transparent 30%),
+      linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.hero-content {
+    align-items: start;
+}
+
+.hero-copy {
+    padding-top: 34px;
+}
+
+.hero-copy h2 {
+    line-height: 1.15;
+    letter-spacing: -0.7px;
+}
+
+.hero-copy p {
+    line-height: 1.7;
+}
+
+.hero-badges {
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:18px 0 2px;
+}
+
+.hero-badge {
+    display:inline-flex;
+    align-items:center;
+    padding:6px 10px;
+    border:1px solid #e2e8f0;
+    background:#ffffff;
+    color:#475569;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.hero-location {
+    color:#2563eb;
+}
+
+/* Compact TradingView strip */
+.tradingview-widget-container {
+    width:100%;
+    height:44px !important;
+    overflow:hidden;
+    background:#1f2937;
+}
+
+/* Mobile */
+@media (max-width: 850px) {
+    .premium-content {
+        justify-content:flex-start;
+        overflow-x:auto;
+        scrollbar-width:none;
+    }
+    .premium-content::-webkit-scrollbar { display:none; }
+    .premium-main { flex-shrink:0; }
+    .premium-button,
+    .location-button { flex-shrink:0; }
+    .hero-copy { padding-top:0; }
+}
 
 @media (max-width: 600px) {
+    .premium-telegram { padding:6px 8px; }
+    .premium-content { gap:7px; min-height:38px; }
+    .premium-title, .premium-price, .premium-membership { font-size:11px; }
+    .premium-button, .location-button { padding:6px 9px; font-size:11px; }
+    .hero { padding:28px 15px 38px; }
+    .hero-copy h2 { font-size:28px; }
+    .hero-badge { font-size:11px; }
+}
 
-    .premium-telegram {
-        padding: 6px 8px;
-    }
-
-    .premium-content {
-        gap: 6px;
-        overflow-x: auto;
-        justify-content: flex-start;
-        white-space: nowrap;
-        scrollbar-width: none;
-    }
-
-    .premium-content::-webkit-scrollbar {
-        display: none;
-    }
-
-    .premium-content h3 {
-        font-size: 11px;
-    }
-
-    .premium-price {
-        font-size: 11px;
-    }
-
-    .premium-content p {
-        font-size: 11px;
-    }
-
-    .premium-button {
-        padding: 5px 8px;
-        font-size: 11px;
-    }
-
-    .location-button {
-        padding: 5px 8px;
-        font-size: 11px;
-    }
+@media (max-width: 600px) {
+  .location-card {
+    padding: 20px;
+    align-items: flex-start;
+  }
+  .location-copy h2 { font-size:20px; }
+  .location-visual { display:none; }
 }
   </style>
 
@@ -667,50 +804,29 @@
 </div>
 <!-- PREMIUM TELEGRAM SIGNAL GROUP -->
 <section class="premium-telegram">
+  <div class="premium-content">
 
-    <div class="premium-content">
-
-        <div class="premium-icon">🔐</div>
-
-        <div>
-            <h2>Premium Telegram Signal Group</h2>
-
-            <p>
-                🇮🇳 Indian Members Only
-            </p>
-
-            <p class="premium-features">
-                🥇 Gold/XAUUSD &nbsp; • &nbsp;
-                📈 Nifty 50 &nbsp; • &nbsp;
-                📊 Bank Nifty
-            </p>
-
-            <p class="premium-info">
-                Get trading signals, market updates and practical trading setups.
-            </p>
-
-            <div class="premium-price">
-                ₹500 <span>/ Membership</span>
-            </div>
-
-            <p class="premium-note">
-                🔒 Payment required before Telegram group access.
-            </p>
-
-            <a href="https://rzp.io/rzp/DNdzwwbU"
-               target="_blank"
-               class="premium-button">
-                💳 JOIN PREMIUM GROUP – ₹500
-            </a>
-<a href="https://maps.app.goo.gl/jUSizzP7Bh6d6jA6A"
-   target="_blank"
-   class="location-button">
-   📍 Jhotwara, Jaipur
-</a>
-        </div>
-
+    <div class="premium-main">
+      <span class="premium-title">🔐 Premium Telegram Signals</span>
+      <span class="premium-price">₹500</span>
+      <span class="premium-membership">/ Membership</span>
     </div>
 
+    <a href="https://rzp.io/rzp/DNdzwwbU"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="premium-button">
+      💳 Join Premium Group
+    </a>
+
+    <a href="https://maps.app.goo.gl/jUSizzP7Bh6d6jA6A"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="location-button">
+      📍 <span>Jhotwara, Jaipur</span> · Map ↗
+    </a>
+
+  </div>
 </section>
 <!-- =========================
      HERO SECTION
@@ -735,6 +851,11 @@
         and Trap Trading concepts with practical education.
       </p>
 
+      <div class="hero-badges">
+        <span class="hero-badge">📍 <span class="hero-location">Jhotwara, Jaipur</span></span>
+        <span class="hero-badge">📈 Practical Market Learning</span>
+        <span class="hero-badge">💬 Direct WhatsApp Enquiry</span>
+      </div>
 
       <div class="buttons">
 
@@ -1244,6 +1365,24 @@
 </section>
 
 
+
+<!-- =========================
+     LOCATION
+     ========================= -->
+<section class="location-section">
+  <div class="location-card">
+    <div class="location-copy">
+      <div class="location-kicker">📍 VISIT US</div>
+      <h2>Forex Trap Trading Classes — Jhotwara, Jaipur</h2>
+      <p>58A, Gosai Marg, Udyog Nagar, Jhotwara, Jaipur, Rajasthan 302012</p>
+      <a href="https://maps.app.goo.gl/jUSizzP7Bh6d6jA6A"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="map-cta">🗺️ Open Location in Google Maps ↗</a>
+    </div>
+    <div class="location-visual">📍<br><small>Jhotwara<br>Jaipur</small></div>
+  </div>
+</section>
 
 <!-- =========================
      CONTACT
