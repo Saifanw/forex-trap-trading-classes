@@ -142,6 +142,7 @@
       color: white;
     }
 
+
     /* =========================
        COMMENTS SECTION
        ========================= */
@@ -250,6 +251,11 @@
       padding: 20px;
     }
 
+
+    /* =========================
+       FOOTER
+       ========================= */
+
     footer {
       background: #0b1120;
       color: #aaa;
@@ -257,6 +263,127 @@
       padding: 20px;
       font-size: 14px;
     }
+
+
+    /* =========================
+       TRADING ENQUIRY BOX
+       ========================= */
+
+    .hero-content {
+      max-width: 1180px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 390px);
+      gap: 40px;
+      align-items: center;
+      text-align: left;
+    }
+
+    .hero-copy p {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .trading-enquiry-box {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.14);
+      text-align: left;
+    }
+
+    .trading-enquiry-box h2 {
+      margin: 0 0 6px;
+      color: #111827;
+      font-size: 24px;
+      text-align: left;
+    }
+
+    .enquiry-subtitle {
+      margin: 0 0 17px;
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .trading-enquiry-box input,
+    .trading-enquiry-box select,
+    .trading-enquiry-box textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 13px;
+      margin-bottom: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+      outline: none;
+      background: #fff;
+    }
+
+    .trading-enquiry-box input:focus,
+    .trading-enquiry-box select:focus,
+    .trading-enquiry-box textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 2px rgba(37,99,235,0.10);
+    }
+
+    .trading-enquiry-box textarea {
+      min-height: 72px;
+      resize: vertical;
+    }
+
+    .enquiry-btn {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      padding: 13px;
+      background: #16a34a;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .enquiry-btn:hover {
+      background: #15803d;
+      transform: translateY(-1px);
+    }
+
+    .enquiry-note {
+      margin-top: 9px;
+      text-align: center;
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 850px) {
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+      }
+
+      .hero-copy p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .trading-enquiry-box {
+        max-width: 430px;
+        width: 100%;
+        margin: auto;
+      }
+
+    }
+
 
     @media (max-width: 600px) {
 
@@ -282,7 +409,9 @@
 
 </head>
 
+
 <body>
+
 
 <header>
 
@@ -295,46 +424,223 @@
 </header>
 
 
+
+<!-- =========================
+     HERO SECTION
+     ========================= -->
+
 <div class="hero">
 
-  <h2>
-    Learn Trading With Practical Market Logic
-  </h2>
+  <div class="hero-content">
 
-  <p>
-    Learn Stock Market, Intraday Trading, Nifty, Bank Nifty,
-    Forex, Gold XAUUSD, Price Action, Technical Analysis
-    and Trap Trading concepts with practical education.
-  </p>
 
-  <div class="buttons">
+    <!-- LEFT SIDE -->
 
-    <a class="btn call" href="tel:+916350566010">
-      📞 Call 6350566010
-    </a>
+    <div class="hero-copy">
 
-    <a class="btn whatsapp"
-       href="https://wa.me/916350566010?text=Hello%2C%20I%20want%20to%20know%20about%20trading%20classes."
-       target="_blank">
+      <h2>
+        Learn Trading With Practical Market Logic
+      </h2>
 
-       💬 WhatsApp Us
+      <p>
+        Learn Stock Market, Intraday Trading, Nifty, Bank Nifty,
+        Forex, Gold XAUUSD, Price Action, Technical Analysis
+        and Trap Trading concepts with practical education.
+      </p>
 
-    </a>
+
+      <div class="buttons">
+
+        <a
+          class="btn call"
+          href="tel:+916350566010"
+        >
+          📞 Call 6350566010
+        </a>
+
+
+        <a
+          class="btn whatsapp"
+          href="https://wa.me/916350566010?text=Hello%2C%20I%20want%20to%20know%20about%20trading%20classes."
+          target="_blank"
+        >
+          💬 WhatsApp Us
+        </a>
+
+      </div>
+
+
+      <!-- SCROLL GUIDE -->
+
+      <div
+        style="
+          margin-top:18px;
+          text-align:center;
+          color:#64748b;
+          font-size:13px;
+        "
+      >
+        ↓ Scroll to explore live markets & trading logic
+      </div>
+
+    </div>
+
+
+
+    <!-- RIGHT SIDE ENQUIRY -->
+
+    <div class="trading-enquiry-box">
+
+      <h2>
+        📩 Start Your Trading Journey
+      </h2>
+
+      <p class="enquiry-subtitle">
+        Tell us what you want to learn and we'll contact you.
+      </p>
+
+
+      <form onsubmit="sendTradingEnquiry(event)">
+
+
+        <input
+          type="text"
+          id="traderName"
+          placeholder="Your Name"
+          maxlength="60"
+          required
+        >
+
+
+        <input
+          type="tel"
+          id="traderMobile"
+          placeholder="Mobile Number"
+          inputmode="numeric"
+          pattern="[0-9]{10}"
+          maxlength="10"
+          required
+        >
+
+
+        <select
+          id="tradingInterest"
+          required
+        >
+
+          <option value="">
+            I want to learn...
+          </option>
+
+          <option>
+            Forex Trading
+          </option>
+
+          <option>
+            Gold / XAUUSD
+          </option>
+
+          <option>
+            Nifty 50
+          </option>
+
+          <option>
+            Bank Nifty
+          </option>
+
+          <option>
+            Intraday Trading
+          </option>
+
+          <option>
+            Trap Trading
+          </option>
+
+          <option>
+            Price Action
+          </option>
+
+          <option>
+            Technical Analysis
+          </option>
+
+        </select>
+
+
+        <select
+          id="traderExperience"
+          required
+        >
+
+          <option value="">
+            Trading Experience
+          </option>
+
+          <option>
+            Beginner
+          </option>
+
+          <option>
+            Intermediate
+          </option>
+
+          <option>
+            Advanced
+          </option>
+
+        </select>
+
+
+        <textarea
+          id="traderMessage"
+          placeholder="What would you like to learn?"
+          maxlength="300"
+          rows="3"
+        ></textarea>
+
+
+        <button
+          type="submit"
+          class="enquiry-btn"
+        >
+          💬 Send Enquiry on WhatsApp
+        </button>
+
+
+        <div class="enquiry-note">
+          We will contact you regarding your enquiry.
+        </div>
+
+
+      </form>
+
+    </div>
 
   </div>
 
 </div>
 
 
+
+<!-- =========================
+     COURSES
+     ========================= -->
+
 <section>
 
-  <h2>Our Trading Courses</h2>
+  <h2>
+    Our Trading Courses
+  </h2>
+
 
   <div class="cards">
 
+
     <div class="card">
 
-      <h3>📈 Stock Market Trading</h3>
+      <h3>
+        📈 Stock Market Trading
+      </h3>
 
       <p>
         Learn stock market basics, market structure,
@@ -344,9 +650,12 @@
     </div>
 
 
+
     <div class="card">
 
-      <h3>⚡ Intraday Trading</h3>
+      <h3>
+        ⚡ Intraday Trading
+      </h3>
 
       <p>
         Understand intraday setups, momentum,
@@ -356,9 +665,12 @@
     </div>
 
 
+
     <div class="card">
 
-      <h3>📊 Nifty & Bank Nifty</h3>
+      <h3>
+        📊 Nifty & Bank Nifty
+      </h3>
 
       <p>
         Learn practical concepts related to Nifty,
@@ -368,9 +680,12 @@
     </div>
 
 
+
     <div class="card">
 
-      <h3>💱 Forex Trading</h3>
+      <h3>
+        💱 Forex Trading
+      </h3>
 
       <p>
         Learn Forex market structure, price action,
@@ -380,9 +695,12 @@
     </div>
 
 
+
     <div class="card">
 
-      <h3>🥇 Gold / XAUUSD</h3>
+      <h3>
+        🥇 Gold / XAUUSD
+      </h3>
 
       <p>
         Understand Gold trading, XAUUSD price behaviour,
@@ -392,9 +710,12 @@
     </div>
 
 
+
     <div class="card">
 
-      <h3>🎯 Trap Trading</h3>
+      <h3>
+        🎯 Trap Trading
+      </h3>
 
       <p>
         Learn breakout traps, fake breakouts,
@@ -404,9 +725,12 @@
     </div>
 
 
+
     <div class="card">
 
-      <h3>📐 Price Action</h3>
+      <h3>
+        📐 Price Action
+      </h3>
 
       <p>
         Learn candles, support and resistance,
@@ -416,9 +740,12 @@
     </div>
 
 
+
     <div class="card">
 
-      <h3>🛡️ Risk Management</h3>
+      <h3>
+        🛡️ Risk Management
+      </h3>
 
       <p>
         Understand stop loss, position sizing,
@@ -427,35 +754,54 @@
 
     </div>
 
+
   </div>
 
 </section>
 
 
+
+<!-- =========================
+     ABOUT
+     ========================= -->
+
 <section>
 
-  <h2>About Our Classes</h2>
+  <h2>
+    About Our Classes
+  </h2>
+
 
   <div class="about">
 
     <p>
 
-      <strong>Forex Trap Trading Classes</strong> is a trading
-      education and training centre located in Jhotwara, Jaipur.
-      We provide practical trading education for beginners and
-      traders who want to understand financial markets in a
+      <strong>
+        Forex Trap Trading Classes
+      </strong>
+
+      is a trading education and training centre
+      located in Jhotwara, Jaipur.
+
+      We provide practical trading education
+      for beginners and traders who want to
+      understand financial markets in a
       structured way.
 
     </p>
 
+
     <br>
+
 
     <p>
 
-      Our training covers stock market education, intraday trading,
-      Nifty, Bank Nifty, Forex, Gold XAUUSD, technical analysis,
-      price action, support and resistance, market structure,
-      breakout and retest concepts, trap trading and risk management.
+      Our training covers stock market education,
+      intraday trading, Nifty, Bank Nifty, Forex,
+      Gold XAUUSD, technical analysis, price action,
+      support and resistance, market structure,
+      breakout and retest concepts, trap trading
+      and risk management.
 
     </p>
 
@@ -464,58 +810,84 @@
 </section>
 
 
+
+<!-- =========================
+     WHY LEARN WITH US
+     ========================= -->
+
 <section>
 
-  <h2>Why Learn With Us?</h2>
+  <h2>
+    Why Learn With Us?
+  </h2>
+
 
   <div class="cards">
 
+
     <div class="card">
 
-      <h3>✅ Practical Learning</h3>
+      <h3>
+        ✅ Practical Learning
+      </h3>
 
       <p>
-        Focus on understanding market behaviour and practical concepts.
+        Focus on understanding market behaviour
+        and practical concepts.
       </p>
 
     </div>
 
 
+
     <div class="card">
 
-      <h3>✅ Multiple Markets</h3>
+      <h3>
+        ✅ Multiple Markets
+      </h3>
 
       <p>
-        Stock Market, Indices, Forex and Gold XAUUSD concepts.
+        Stock Market, Indices, Forex
+        and Gold XAUUSD concepts.
       </p>
 
     </div>
 
 
+
     <div class="card">
 
-      <h3>✅ Beginner Friendly</h3>
+      <h3>
+        ✅ Beginner Friendly
+      </h3>
 
       <p>
-        Concepts explained in a simple and structured manner.
+        Concepts explained in a simple
+        and structured manner.
       </p>
 
     </div>
 
 
+
     <div class="card">
 
-      <h3>✅ Jaipur Location</h3>
+      <h3>
+        ✅ Jaipur Location
+      </h3>
 
       <p>
-        Trading education available in Jhotwara, Jaipur.
+        Trading education available
+        in Jhotwara, Jaipur.
       </p>
 
     </div>
+
 
   </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -526,12 +898,14 @@
 
   <div class="comments-container">
 
+
     <h2>
       💬 Visitor Comments
     </h2>
 
 
     <div class="comment-form">
+
 
       <input
         type="text"
@@ -540,28 +914,31 @@
         maxlength="50"
       >
 
+
       <textarea
         id="comment"
         placeholder="Write your comment..."
         maxlength="500"
       ></textarea>
 
+
       <button
         class="comment-btn"
         id="submitComment"
         onclick="addComment()"
       >
-
         Post Comment
-
       </button>
+
 
       <div
         id="commentMessage"
         class="comment-message"
       ></div>
 
+
     </div>
+
 
 
     <div
@@ -575,27 +952,38 @@
 
     </div>
 
+
   </div>
 
 </section>
 
 
+
+<!-- =========================
+     CONTACT
+     ========================= -->
+
 <section class="contact">
+
 
   <h2>
     Contact Forex Trap Trading Classes
   </h2>
+
 
   <p>
     📍 58A, Gosai Marg, Udyog Nagar, Jhotwara,
     Jaipur, Rajasthan 302012
   </p>
 
+
   <p style="margin-top:10px;">
     📞 6350566010
   </p>
 
+
   <div class="buttons">
+
 
     <a
       class="btn call"
@@ -613,16 +1001,125 @@
       💬 WhatsApp
     </a>
 
+
   </div>
 
 </section>
 
 
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
 <footer>
 
-  © 2026 Forex Trap Trading Classes | Jhotwara, Jaipur
+  © 2026 Forex Trap Trading Classes |
+  Jhotwara, Jaipur
 
 </footer>
+
+
+
+<!-- =========================
+     TRADING ENQUIRY JAVASCRIPT
+     ========================= -->
+
+<script>
+
+function sendTradingEnquiry(event) {
+
+  event.preventDefault();
+
+
+  const name =
+    document.getElementById("traderName")
+    .value
+    .trim();
+
+
+  const mobile =
+    document.getElementById("traderMobile")
+    .value
+    .trim();
+
+
+  const interest =
+    document.getElementById("tradingInterest")
+    .value;
+
+
+  const experience =
+    document.getElementById("traderExperience")
+    .value;
+
+
+  const message =
+    document.getElementById("traderMessage")
+    .value
+    .trim();
+
+
+  /* Mobile validation */
+
+  if (!/^\d{10}$/.test(mobile)) {
+
+    alert(
+      "Please enter a valid 10-digit mobile number."
+    );
+
+    return;
+
+  }
+
+
+  /* WhatsApp number */
+
+  const whatsappNumber =
+    "916350566010";
+
+
+  /* WhatsApp message */
+
+  const whatsappMessage =
+
+`*New Trading Enquiry*
+
+👤 Name: ${name}
+
+📱 Mobile: ${mobile}
+
+📈 Interested In: ${interest}
+
+🎯 Experience: ${experience}
+
+💬 Message: ${message || "Not provided"}
+
+I would like to know more about the trading classes.`;
+
+
+  /* WhatsApp URL */
+
+  const whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(
+      whatsappMessage
+    );
+
+
+  /* Open WhatsApp */
+
+  window.open(
+    whatsappURL,
+    "_blank"
+  );
+
+}
+
+</script>
+
 
 
 <!-- =========================
@@ -631,328 +1128,522 @@
 
 <script type="module">
 
-  import {
-    initializeApp
-  } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 
   import {
+
+    initializeApp
+
+  }
+
+  from
+  "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+
+  import {
+
     getFirestore,
     collection,
     addDoc,
     getDocs,
     serverTimestamp
-  } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+  }
+
+  from
+  "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 
-  // Firebase Configuration
+
+  /* Firebase Configuration */
 
   const firebaseConfig = {
 
-    apiKey: "AIzaSyBeVwF0fk5bGPiJ0vm_MSEyz_RPm_sigEY",
 
-    authDomain: "forex-trading-classes.firebaseapp.com",
+    apiKey:
+      "AIzaSyBeVwF0fk5bGPiJ0vm_MSEyz_RPm_sigEY",
 
-    projectId: "forex-trading-classes",
 
-    storageBucket: "forex-trading-classes.firebasestorage.app",
+    authDomain:
+      "forex-trading-classes.firebaseapp.com",
 
-    messagingSenderId: "786712869626",
 
-    appId: "1:786712869626:web:4e7877e96ea3667bf72743",
+    projectId:
+      "forex-trading-classes",
 
-    measurementId: "G-ZSCH0E7R9H"
+
+    storageBucket:
+      "forex-trading-classes.firebasestorage.app",
+
+
+    messagingSenderId:
+      "786712869626",
+
+
+    appId:
+      "1:786712869626:web:4e7877e96ea3667bf72743",
+
+
+    measurementId:
+      "G-ZSCH0E7R9H"
 
   };
 
 
-  // Initialize Firebase
 
-  const app = initializeApp(firebaseConfig);
+  /* Initialize Firebase */
 
-  const db = getFirestore(app);
+  const app =
+    initializeApp(
+      firebaseConfig
+    );
 
 
-  // Firestore collection
+  const db =
+    getFirestore(app);
 
-  const commentsRef = collection(db, "comments");
 
 
-  // Make function available to button
+  /* Firestore collection */
 
-  window.addComment = async function() {
+  const commentsRef =
+    collection(
+      db,
+      "comments"
+    );
 
-    const nameInput =
-      document.getElementById("name");
 
-    const commentInput =
-      document.getElementById("comment");
 
-    const message =
-      document.getElementById("commentMessage");
+  /* Make function available to button */
 
-    const button =
-      document.getElementById("submitComment");
+  window.addComment =
+    async function() {
 
 
-    const name =
-      nameInput.value.trim();
+      const nameInput =
+        document.getElementById(
+          "name"
+        );
 
-    const comment =
-      commentInput.value.trim();
 
+      const commentInput =
+        document.getElementById(
+          "comment"
+        );
 
-    // Validation
 
-    if (name.length < 2) {
+      const message =
+        document.getElementById(
+          "commentMessage"
+        );
 
-      message.style.color = "#dc2626";
 
-      message.textContent =
-        "Please enter your name.";
+      const button =
+        document.getElementById(
+          "submitComment"
+        );
 
-      return;
 
-    }
 
+      const name =
+        nameInput
+        .value
+        .trim();
 
-    if (comment.length < 1) {
 
-      message.style.color = "#dc2626";
+      const comment =
+        commentInput
+        .value
+        .trim();
 
-      message.textContent =
-        "Please write a comment.";
 
-      return;
 
-    }
+      /* Validation */
 
+      if (name.length < 2) {
 
-    if (name.length > 50) {
+        message.style.color =
+          "#dc2626";
 
-      message.style.color = "#dc2626";
-
-      message.textContent =
-        "Name is too long.";
-
-      return;
-
-    }
-
-
-    if (comment.length > 500) {
-
-      message.style.color = "#dc2626";
-
-      message.textContent =
-        "Comment is too long.";
-
-      return;
-
-    }
-
-
-    try {
-
-      button.disabled = true;
-
-      button.textContent = "Posting...";
-
-      message.textContent = "";
-
-
-      // Save comment to Firestore
-
-      await addDoc(commentsRef, {
-
-        name: name,
-
-        comment: comment,
-
-        createdAt: serverTimestamp()
-
-      });
-
-
-      // Clear form
-
-      nameInput.value = "";
-
-      commentInput.value = "";
-
-
-      message.style.color = "#16a34a";
-
-      message.textContent =
-        "✅ Comment posted successfully!";
-
-
-      // Reload comments
-
-      await loadComments();
-
-
-    } catch (error) {
-
-      console.error(error);
-
-      message.style.color = "#dc2626";
-
-      message.textContent =
-        "❌ Unable to post comment. Please try again.";
-
-    }
-
-
-    button.disabled = false;
-
-    button.textContent = "Post Comment";
-
-  };
-
-
-  // Load comments
-
-  async function loadComments() {
-
-    const commentList =
-      document.getElementById("commentList");
-
-
-    try {
-
-      const snapshot =
-        await getDocs(commentsRef);
-
-
-      let comments = [];
-
-
-      snapshot.forEach((doc) => {
-
-        const data = doc.data();
-
-        comments.push({
-
-          id: doc.id,
-
-          name: data.name || "Website Visitor",
-
-          comment: data.comment || "",
-
-          createdAt: data.createdAt
-
-        });
-
-      });
-
-
-      // Newest comments first
-
-      comments.sort((a, b) => {
-
-        const timeA =
-          a.createdAt?.toMillis
-            ? a.createdAt.toMillis()
-            : 0;
-
-        const timeB =
-          b.createdAt?.toMillis
-            ? b.createdAt.toMillis()
-            : 0;
-
-        return timeB - timeA;
-
-      });
-
-
-      commentList.innerHTML = "";
-
-
-      if (comments.length === 0) {
-
-        commentList.innerHTML = `
-          <div class="no-comments">
-            No comments yet. Be the first to comment! 😊
-          </div>
-        `;
+        message.textContent =
+          "Please enter your name.";
 
         return;
 
       }
 
 
-      comments.forEach((item) => {
 
-        const box =
-          document.createElement("div");
+      if (comment.length < 1) {
 
-        box.className =
-          "comment-box";
+        message.style.color =
+          "#dc2626";
 
+        message.textContent =
+          "Please write a comment.";
 
-        const name =
-          document.createElement("div");
+        return;
 
-        name.className =
-          "comment-name";
-
-        name.textContent =
-          "👤 " + item.name;
+      }
 
 
-        const text =
-          document.createElement("div");
 
-        text.className =
-          "comment-text";
+      if (name.length > 50) {
 
-        text.textContent =
-          item.comment;
+        message.style.color =
+          "#dc2626";
 
+        message.textContent =
+          "Name is too long.";
 
-        const date =
-          document.createElement("div");
+        return;
 
-        date.className =
-          "comment-date";
+      }
 
 
-        if (item.createdAt?.toDate) {
 
-          const d =
-            item.createdAt.toDate();
+      if (comment.length > 500) {
 
-          date.textContent =
-            d.toLocaleString("en-IN");
+        message.style.color =
+          "#dc2626";
 
-        } else {
+        message.textContent =
+          "Comment is too long.";
 
-          date.textContent =
-            "Just now";
+        return;
+
+      }
+
+
+
+      try {
+
+
+        button.disabled =
+          true;
+
+
+        button.textContent =
+          "Posting...";
+
+
+        message.textContent =
+          "";
+
+
+
+        /* Save comment to Firestore */
+
+        await addDoc(
+          commentsRef,
+          {
+
+            name: name,
+
+            comment: comment,
+
+            createdAt:
+              serverTimestamp()
+
+          }
+        );
+
+
+
+        /* Clear form */
+
+        nameInput.value =
+          "";
+
+        commentInput.value =
+          "";
+
+
+
+        message.style.color =
+          "#16a34a";
+
+
+        message.textContent =
+          "✅ Comment posted successfully!";
+
+
+
+        /* Reload comments */
+
+        await loadComments();
+
+
+      }
+
+      catch (error) {
+
+
+        console.error(error);
+
+
+        message.style.color =
+          "#dc2626";
+
+
+        message.textContent =
+          "❌ Unable to post comment. Please try again.";
+
+
+      }
+
+
+
+      button.disabled =
+        false;
+
+
+      button.textContent =
+        "Post Comment";
+
+
+    };
+
+
+
+  /* Load comments */
+
+  async function loadComments() {
+
+
+    const commentList =
+      document.getElementById(
+        "commentList"
+      );
+
+
+    try {
+
+
+      const snapshot =
+        await getDocs(
+          commentsRef
+        );
+
+
+      let comments = [];
+
+
+
+      snapshot.forEach(
+        (doc) => {
+
+
+          const data =
+            doc.data();
+
+
+          comments.push({
+
+            id:
+              doc.id,
+
+            name:
+              data.name ||
+              "Website Visitor",
+
+            comment:
+              data.comment ||
+              "",
+
+            createdAt:
+              data.createdAt
+
+          });
+
 
         }
+      );
 
 
-        box.appendChild(name);
 
-        box.appendChild(text);
+      /* Newest comments first */
 
-        box.appendChild(date);
-
-
-        commentList.appendChild(box);
-
-      });
+      comments.sort(
+        (a, b) => {
 
 
-    } catch (error) {
+          const timeA =
+
+            a.createdAt?.toMillis
+
+              ? a.createdAt.toMillis()
+
+              : 0;
+
+
+          const timeB =
+
+            b.createdAt?.toMillis
+
+              ? b.createdAt.toMillis()
+
+              : 0;
+
+
+          return timeB - timeA;
+
+        }
+      );
+
+
+
+      commentList.innerHTML =
+        "";
+
+
+
+      if (
+        comments.length === 0
+      ) {
+
+
+        commentList.innerHTML = `
+
+          <div class="no-comments">
+
+            No comments yet.
+            Be the first to comment! 😊
+
+          </div>
+
+        `;
+
+
+        return;
+
+      }
+
+
+
+      comments.forEach(
+        (item) => {
+
+
+          const box =
+            document.createElement(
+              "div"
+            );
+
+
+          box.className =
+            "comment-box";
+
+
+
+          const name =
+            document.createElement(
+              "div"
+            );
+
+
+          name.className =
+            "comment-name";
+
+
+          name.textContent =
+            "👤 " +
+            item.name;
+
+
+
+          const text =
+            document.createElement(
+              "div"
+            );
+
+
+          text.className =
+            "comment-text";
+
+
+          text.textContent =
+            item.comment;
+
+
+
+          const date =
+            document.createElement(
+              "div"
+            );
+
+
+          date.className =
+            "comment-date";
+
+
+
+          if (
+            item.createdAt?.toDate
+          ) {
+
+
+            const d =
+              item.createdAt.toDate();
+
+
+            date.textContent =
+              d.toLocaleString(
+                "en-IN"
+              );
+
+
+          }
+
+          else {
+
+
+            date.textContent =
+              "Just now";
+
+          }
+
+
+
+          box.appendChild(
+            name
+          );
+
+
+          box.appendChild(
+            text
+          );
+
+
+          box.appendChild(
+            date
+          );
+
+
+          commentList.appendChild(
+            box
+          );
+
+
+        }
+      );
+
+
+    }
+
+    catch (error) {
+
 
       console.error(error);
 
+
       commentList.innerHTML = `
+
         <div class="no-comments">
+
           Unable to load comments.
+
         </div>
+
       `;
 
     }
@@ -960,9 +1651,11 @@
   }
 
 
-  // Load comments when page opens
+
+  /* Load comments when page opens */
 
   loadComments();
+
 
 </script>
 
