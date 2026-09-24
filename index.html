@@ -1,111 +1,2330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trading Classes Admin — Lead Dashboard</title>
-<meta name="robots" content="noindex,nofollow">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.5}
-button,input,select,textarea{font:inherit}
-.login-page{min-height:100vh;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#0f172a,#1e3a5f)}
-.login-card{width:min(420px,100%);background:#fff;border-radius:18px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.22)}
-.login-card h1{font-size:24px;margin-bottom:5px}.login-card p{color:#64748b;font-size:13px;margin-bottom:20px}
-.field{margin-bottom:13px}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:5px;color:#334155}
-.field input{width:100%;padding:11px 12px;border:1px solid #cbd5e1;border-radius:9px;outline:none}
-.field input:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
-.primary-btn{width:100%;padding:12px;border:0;border-radius:9px;background:#2563eb;color:#fff;font-weight:800;cursor:pointer}
-.primary-btn:disabled{opacity:.65;cursor:not-allowed}.error{min-height:20px;margin-top:10px;text-align:center;color:#dc2626;font-size:12px;font-weight:700}
-.dashboard{display:none;min-height:100vh}.topbar{height:64px;background:#0f172a;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 22px;gap:15px}
-.brand strong{font-size:16px}.brand span{display:block;color:#94a3b8;font-size:10px}
-.logout{border:1px solid #475569;background:transparent;color:#fff;padding:7px 11px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:800}
-.container{max-width:1250px;margin:auto;padding:22px}.notice{margin-bottom:14px;padding:11px 13px;border-radius:10px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:11px}
-.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}.stat{background:#fff;border:1px solid #e2e8f0;border-radius:13px;padding:16px}
-.stat span{display:block;color:#64748b;font-size:11px;font-weight:700}.stat strong{display:block;font-size:24px;margin-top:3px}
-.toolbar{background:#fff;border:1px solid #e2e8f0;border-radius:13px;padding:14px;display:flex;gap:9px;flex-wrap:wrap;margin-bottom:13px}
-.toolbar input,.toolbar select{padding:9px 10px;border:1px solid #cbd5e1;border-radius:8px;min-width:160px}
-.refresh{padding:9px 12px;border:0;border-radius:8px;background:#2563eb;color:#fff;font-weight:800;cursor:pointer}
-.table-wrap{background:#fff;border:1px solid #e2e8f0;border-radius:13px;overflow:auto}
-table{width:100%;border-collapse:collapse;min-width:1050px}th,td{padding:12px;border-bottom:1px solid #eef2f7;text-align:left;vertical-align:top;font-size:12px}
-th{background:#f8fafc;color:#475569;font-size:10px;text-transform:uppercase;letter-spacing:.5px}
-td strong{font-size:12px}.muted{color:#64748b;font-size:10px}
-.status-select{padding:6px;border:1px solid #cbd5e1;border-radius:7px;font-size:11px}
-.notes{width:170px;padding:7px;border:1px solid #cbd5e1;border-radius:7px;font-size:11px}
-.save-note{border:0;background:#0f766e;color:#fff;border-radius:7px;padding:6px 8px;font-size:10px;font-weight:800;cursor:pointer;margin-top:5px}
-.empty{padding:35px;text-align:center;color:#64748b}
-@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}.container{padding:14px}}
-</style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-21WZP5M2RV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-21WZP5M2RV');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Forex Trap Trading Classes, Jhotwara, Jaipur">
+
+
+  <title>Stock Market & Forex Trading Classes Jaipur | Trap Trading</title>
+
+  <meta name="description"
+  content="Forex Trap Trading Classes in Jhotwara, Jaipur. Practical stock market, intraday, Nifty, Bank Nifty, Forex, Gold XAUUSD, price action, technical analysis and trap trading education.">
+
+  <meta name="keywords"
+  content="trading classes Jaipur, stock market classes Jaipur, trading coaching Jaipur, intraday trading classes, Nifty trading classes, Bank Nifty trading, forex trading classes, XAUUSD trading, gold trading, price action trading, technical analysis, trap trading">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #d1d5db;
+    }
+
+    .hero {
+      background: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      color: #555;
+      font-size: 18px;
+    }
+
+    .buttons {
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      margin: 7px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .call {
+      background: #2563eb;
+      color: white;
+    }
+
+    .whatsapp {
+      background: #16a34a;
+      color: white;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 45px 20px;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .about {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+    }
+
+    .contact {
+      background: #111827;
+      color: white;
+      text-align: center;
+      max-width: none;
+    }
+
+    .contact h2 {
+      color: white;
+    }
+
+
+    /* =========================
+       LOCATION CARD
+       ========================= */
+
+    .location-section {
+      max-width: 1100px;
+      padding-top: 15px;
+      padding-bottom: 45px;
+    }
+
+    .location-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 25px 28px;
+      box-shadow: 0 6px 20px rgba(15,23,42,.06);
+    }
+
+    .location-kicker {
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .7px;
+      margin-bottom: 5px;
+    }
+
+    .location-copy h2 {
+      text-align: left;
+      margin: 0 0 7px;
+      font-size: 23px;
+      color: #0f172a;
+    }
+
+    .location-copy p {
+      color: #64748b;
+      margin-bottom: 15px;
+    }
+
+    .map-cta {
+      display: inline-flex;
+      align-items: center;
+      padding: 9px 13px;
+      border-radius: 8px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .map-cta:hover { background:#dbeafe; }
+
+    .location-visual {
+      min-width: 125px;
+      height: 105px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg,#eff6ff,#f8fafc);
+      border: 1px solid #dbeafe;
+      font-size: 34px;
+      line-height: 1.05;
+    }
+
+    .location-visual small {
+      color:#475569;
+      font-size:12px;
+      font-weight:700;
+      line-height:1.35;
+    }
+
+    /* =========================
+       COMMENTS SECTION
+       ========================= */
+
+    .comments-section {
+      background: #eef2f7;
+      max-width: none;
+    }
+
+    .comments-container {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .comment-form {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    .comment-form input,
+    .comment-form textarea {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      outline: none;
+    }
+
+    .comment-form input:focus,
+    .comment-form textarea:focus {
+      border-color: #2563eb;
+    }
+
+    .comment-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .comment-btn {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .comment-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .comment-btn:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
+
+    .comment-message {
+      margin-top: 12px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .comment-box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+
+    .comment-name {
+      font-weight: bold;
+      color: #111827;
+      margin-bottom: 5px;
+    }
+
+    .comment-text {
+      color: #444;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .comment-date {
+      font-size: 12px;
+      color: #888;
+      margin-top: 8px;
+    }
+
+    .no-comments {
+      text-align: center;
+      color: #777;
+      padding: 20px;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      background: #0b1120;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       TRADING ENQUIRY BOX
+       ========================= */
+
+    .hero-content {
+      max-width: 1180px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, 390px);
+      gap: 40px;
+      align-items: center;
+      text-align: left;
+    }
+
+    .hero-copy p {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .trading-enquiry-box {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.14);
+      text-align: left;
+    }
+
+    .trading-enquiry-box h2 {
+      margin: 0 0 6px;
+      color: #111827;
+      font-size: 24px;
+      text-align: left;
+    }
+
+    .enquiry-subtitle {
+      margin: 0 0 17px;
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .trading-enquiry-box input,
+    .trading-enquiry-box select,
+    .trading-enquiry-box textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 13px;
+      margin-bottom: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+      outline: none;
+      background: #fff;
+    }
+
+    .trading-enquiry-box input:focus,
+    .trading-enquiry-box select:focus,
+    .trading-enquiry-box textarea:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 2px rgba(37,99,235,0.10);
+    }
+
+    .trading-enquiry-box textarea {
+      min-height: 72px;
+      resize: vertical;
+    }
+
+    .enquiry-btn {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      padding: 13px;
+      background: #16a34a;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .enquiry-btn:hover {
+      background: #15803d;
+      transform: translateY(-1px);
+    }
+
+    .enquiry-note {
+      margin-top: 9px;
+      text-align: center;
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 850px) {
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+      }
+
+      .hero-copy p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .trading-enquiry-box {
+        max-width: 430px;
+        width: 100%;
+        margin: auto;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      header h1 {
+        font-size: 23px;
+      }
+
+      section {
+        padding: 35px 15px;
+      }
+
+      .comment-form {
+        padding: 20px;
+      }
+
+    }
+/* ===== PREMIUM TOP HEADER + DYNAMIC HELP BAR ===== */
+.premium-header{position:relative;min-height:150px;overflow:hidden;background:linear-gradient(135deg,#0d1727 0%,#15263f 58%,#102038 100%);color:#fff;padding:25px 20px 17px;text-align:center;border-bottom:1px solid #263952}
+.header-chart-bg{position:absolute;inset:0;opacity:1;pointer-events:none}
+.header-chart-bg svg{width:100%;height:100%;display:block}
+.header-content{position:relative;z-index:2;max-width:1180px;margin:auto}
+.header-eyebrow{font-size:9px;letter-spacing:2px;color:#8fb7e8;font-weight:800;margin-bottom:5px}
+.premium-header h1{font-size:32px;line-height:1.15;margin:0 0 5px;letter-spacing:-.5px}
+.premium-header p{font-size:13px;color:#d5dfeb}.premium-header p span{color:#6682a4;margin:0 4px}
+.market-motif{display:flex;justify-content:center;gap:12px;margin-top:13px;color:#8299b5;font-size:9px;font-weight:800;letter-spacing:.8px;opacity:.9}
+.market-motif .buy{color:#72d29a}.market-motif .sell{color:#ff7e8a}
+.top-help-bar{background:#fff;border-bottom:1px solid #dfe7f0;box-shadow:0 5px 15px rgba(15,35,60,.07);position:relative;z-index:5}
+.top-help-inner{max-width:1180px;min-height:66px;margin:auto;padding:9px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.top-help-message{display:flex;align-items:center;gap:11px;min-width:0}.top-help-dot{width:9px;height:9px;border-radius:50%;background:#f59e0b;box-shadow:0 0 0 5px #fff3d6;flex:0 0 9px}
+.top-help-copy{min-width:0}.top-help-copy strong{display:block;font-size:13px;color:#142b44;line-height:1.35;transition:opacity .2s}.top-help-copy span{display:block;color:#718096;font-size:10px;margin-top:2px;transition:opacity .2s}
+.top-help-btn{flex:0 0 auto;background:#16a34a;color:#fff;padding:10px 14px;border-radius:9px;font-size:11px;font-weight:850;box-shadow:0 7px 17px rgba(22,163,74,.15);white-space:nowrap}
+.top-help-btn:hover{background:#15803d}
+@media(max-width:600px){
+ .premium-header{min-height:128px;padding:19px 12px 13px}.premium-header h1{font-size:24px}.premium-header p{font-size:10px}.header-eyebrow{font-size:7px;letter-spacing:1.4px}.market-motif{gap:7px;font-size:7px;overflow:hidden;white-space:nowrap;margin-top:10px}.market-motif span:nth-child(n+9){display:none}
+ .top-help-inner{min-height:72px;padding:9px 11px;gap:8px}.top-help-copy strong{font-size:11px}.top-help-copy span{font-size:8px}.top-help-btn{font-size:9px;padding:8px 9px}
+}
+
+/* ==============================
+   LIVE MARKET TICKER
+   ============================== */
+
+.live-market-bar {
+    width: 100%;
+    background: #111827;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 9px 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 1px solid #374151;
+}
+
+.live-market-bar::-webkit-scrollbar {
+    height: 3px;
+}
+
+.live-market-bar strong {
+    color: #ffffff;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.live-market-bar a {
+    color: #d1d5db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.live-market-bar a:hover {
+    color: #ffffff;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    animation: livePulse 1.3s infinite;
+    flex-shrink: 0;
+}
+
+@keyframes livePulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(1.3);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.view-chart {
+    color: #60a5fa !important;
+    font-weight: 600 !important;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .live-market-bar {
+        gap: 16px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .live-market-bar strong {
+        font-size: 12px;
+    }
+}
+/* ===== PROFESSIONAL PREMIUM + LOCATION BAR ===== */
+
+.premium-telegram {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+    padding: 7px 14px;
+}
+
+.premium-content {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 42px;
+}
+
+.premium-icon { display:none; }
+
+.premium-main {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.premium-title {
+    color: #111827;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.premium-price {
+    color: #d97706;
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.premium-membership {
+    margin: 0;
+    color: #64748b;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.premium-features,
+.premium-info,
+.premium-note { display:none; }
+
+.premium-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 13px;
+    background: linear-gradient(135deg, #229ED9, #168dcc);
+    color: #ffffff !important;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: 800;
+    font-size: 12px;
+    white-space: nowrap;
+    box-shadow: 0 3px 9px rgba(34,158,217,0.24);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.premium-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 13px rgba(34,158,217,0.32);
+}
+
+.location-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 11px;
+    background: #f8fafc;
+    color: #1e293b !important;
+    text-decoration: none;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+.location-button:hover {
+    background: #eff6ff;
+    border-color: #93c5fd;
+    transform: translateY(-1px);
+}
+
+.location-button span {
+    color: #2563eb;
+}
+
+/* Make the hero start sooner and feel more premium */
+.hero {
+    padding: 38px 20px 48px;
+    background:
+      radial-gradient(circle at 12% 15%, rgba(37,99,235,.055), transparent 30%),
+      linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.hero-content {
+    align-items: start;
+}
+
+.hero-copy {
+    padding-top: 34px;
+}
+
+.hero-copy h2 {
+    line-height: 1.15;
+    letter-spacing: -0.7px;
+}
+
+.hero-copy p {
+    line-height: 1.7;
+}
+
+.hero-badges {
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:18px 0 2px;
+}
+
+.hero-badge {
+    display:inline-flex;
+    align-items:center;
+    padding:6px 10px;
+    border:1px solid #e2e8f0;
+    background:#ffffff;
+    color:#475569;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.hero-location {
+    color:#2563eb;
+}
+
+/* Compact TradingView strip */
+.tradingview-widget-container {
+    width:100%;
+    height:44px !important;
+    overflow:hidden;
+    background:#1f2937;
+}
+
+
+/* =========================
+   HINDI LOSS / TRADING HELP STRIP
+   ========================= */
+.loss-help-strip{
+    margin-top:24px;
+    width:100%;
+    border:1px solid #dbe5f0;
+    border-radius:16px;
+    background:linear-gradient(135deg,#fffaf0 0%,#ffffff 55%,#f4f9ff 100%);
+    box-shadow:0 10px 28px rgba(15,42,72,.08);
+    padding:12px 14px;
+    display:flex;
+    align-items:center;
+    gap:13px;
+    position:relative;
+    overflow:hidden;
+}
+.loss-help-strip::before{
+    content:"";
+    width:4px;
+    height:58px;
+    border-radius:8px;
+    background:linear-gradient(180deg,#f59e0b,#2563eb);
+    flex:0 0 4px;
+}
+.loss-help-icon{
+    width:36px;
+    height:36px;
+    flex:0 0 36px;
+    display:grid;
+    place-items:center;
+    border-radius:11px;
+    background:#fff3d6;
+    font-size:18px;
+}
+.loss-help-copy{
+    min-width:0;
+    flex:1;
+}
+.loss-help-title{
+    font-size:14px;
+    font-weight:800;
+    color:#102a43;
+    line-height:1.35;
+}
+.loss-help-sub{
+    margin-top:2px;
+    font-size:11px;
+    color:#64748b;
+    line-height:1.4;
+}
+.loss-help-btn{
+    flex:0 0 auto;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    padding:10px 13px;
+    border-radius:10px;
+    background:#16a34a;
+    color:#fff;
+    font-size:12px;
+    font-weight:800;
+    box-shadow:0 7px 16px rgba(22,163,74,.18);
+    transition:transform .18s ease,background .18s ease;
+}
+.loss-help-btn:hover{background:#15803d;transform:translateY(-1px)}
+.loss-help-rotating{transition:opacity .22s ease}
+@media(max-width:850px){
+    .loss-help-strip{align-items:flex-start}
+    .loss-help-btn{padding:9px 11px}
+}
+@media(max-width:600px){
+    .loss-help-strip{padding:11px;gap:9px;margin-top:20px}
+    .loss-help-icon{width:32px;height:32px;flex-basis:32px;font-size:16px}
+    .loss-help-title{font-size:12px}
+    .loss-help-sub{font-size:10px}
+    .loss-help-btn{font-size:10px;padding:8px 9px;white-space:nowrap}
+    .loss-help-strip::before{height:54px}
+}
+
+/* Mobile */
+@media (max-width: 850px) {
+    .premium-content {
+        justify-content:flex-start;
+        overflow-x:auto;
+        scrollbar-width:none;
+    }
+    .premium-content::-webkit-scrollbar { display:none; }
+    .premium-main { flex-shrink:0; }
+    .premium-button,
+    .location-button { flex-shrink:0; }
+    .hero-copy { padding-top:0; }
+}
+
+@media (max-width: 600px) {
+    .premium-telegram { padding:6px 8px; }
+    .premium-content { gap:7px; min-height:38px; }
+    .premium-title, .premium-price, .premium-membership { font-size:11px; }
+    .premium-button, .location-button { padding:6px 9px; font-size:11px; }
+    .hero { padding:28px 15px 38px; }
+    .hero-copy h2 { font-size:28px; }
+    .hero-badge { font-size:11px; }
+}
+
+@media (max-width: 600px) {
+  .location-card {
+    padding: 20px;
+    align-items: flex-start;
+  }
+  .location-copy h2 { font-size:20px; }
+  .location-visual { display:none; }
+}
+  
+
+/* ===== HERO OFFLINE CLASS MAP ===== */
+.hero-map-card{
+  margin-top:22px;
+  width:100%;
+  background:#fff;
+  border:1px solid #dbe5f0;
+  border-radius:16px;
+  padding:13px;
+  box-shadow:0 10px 28px rgba(15,42,72,.08);
+}
+.hero-map-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:2px 3px 12px;
+}
+.hero-map-kicker{
+  color:#2563eb;
+  font-size:9px;
+  font-weight:850;
+  letter-spacing:1px;
+  margin-bottom:3px;
+}
+.hero-map-header h3{
+  color:#0f172a;
+  font-size:17px;
+  margin:0 0 2px;
+}
+.hero-map-header p{
+  color:#64748b;
+  font-size:10px;
+  line-height:1.4;
+  margin:0;
+}
+.hero-map-button{
+  flex:0 0 auto;
+  padding:9px 12px;
+  border-radius:8px;
+  background:#eff6ff;
+  border:1px solid #bfdbfe;
+  color:#1d4ed8;
+  text-decoration:none;
+  font-size:10px;
+  font-weight:800;
+  white-space:nowrap;
+}
+.hero-map-frame{
+  width:100%;
+  height:210px;
+  border-radius:11px;
+  overflow:hidden;
+  background:#e2e8f0;
+}
+.hero-map-frame iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+@media(max-width:600px){
+  .hero-map-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .hero-map-button{
+    width:100%;
+    text-align:center;
+  }
+  .hero-map-frame{
+    height:190px;
+  }
+}
+
+/* ===== V2 REVENUE + LEAD GENERATION SECTIONS ===== */
+
+.section-kicker{
+  text-align:center;
+  font-size:10px;
+  letter-spacing:1.5px;
+  font-weight:850;
+  color:#2563eb;
+  margin-bottom:7px;
+}
+.section-intro{
+  max-width:760px;
+  margin:-15px auto 25px;
+  text-align:center;
+  color:#64748b;
+  font-size:14px;
+}
+
+.problem-section{background:#f8fafc;max-width:none;}
+.problem-grid{
+  max-width:1100px;margin:auto;display:grid;
+  grid-template-columns:repeat(3,1fr);gap:13px;
+}
+.problem-card{
+  border:1px solid #e2e8f0;background:#fff;border-radius:13px;
+  padding:17px;text-align:left;cursor:pointer;
+  box-shadow:0 4px 13px rgba(15,23,42,.05);
+  transition:.18s ease;
+}
+.problem-card:hover,.problem-card.active{
+  border-color:#93c5fd;transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(37,99,235,.10);
+}
+.problem-card span{display:block;font-size:21px;margin-bottom:5px}
+.problem-card strong{display:block;color:#0f172a;font-size:14px}
+.problem-card small{display:block;color:#64748b;margin-top:2px;font-size:11px}
+.problem-result{
+  max-width:1100px;margin:18px auto 0;padding:15px 18px;
+  background:#fff;border:1px solid #dbe5f0;border-radius:12px;
+  display:flex;justify-content:space-between;gap:15px;align-items:center;
+}
+.problem-result strong{font-size:13px;color:#0f172a}
+.problem-result span{font-size:11px;color:#64748b}
+
+.logic-section{background:#fff;}
+.logic-flow{
+  max-width:1100px;margin:auto;display:flex;align-items:stretch;
+  justify-content:center;gap:7px;flex-wrap:wrap;
+}
+.logic-step{
+  min-width:125px;padding:15px 12px;border:1px solid #e2e8f0;
+  border-radius:13px;background:#f8fafc;text-align:center;
+}
+.logic-step b{display:block;font-size:10px;color:#2563eb}
+.logic-step strong{display:block;margin:3px 0;color:#0f172a;font-size:15px}
+.logic-step span{font-size:10px;color:#64748b}
+.logic-step.trap{background:#eff6ff;border-color:#93c5fd}
+.logic-arrow{display:flex;align-items:center;color:#94a3b8;font-size:20px}
+.center-cta{text-align:center;margin-top:22px}
+
+.tools-section{background:#f8fafc;max-width:none}
+.tools-cards{max-width:1100px;margin:auto}
+.tool-card{text-align:center}
+.tool-icon{font-size:28px;margin-bottom:5px}
+.tool-btn{
+  margin-top:12px;padding:8px 12px;border-radius:8px;
+  border:1px solid #bfdbfe;background:#eff6ff;color:#1d4ed8;
+  font-weight:800;cursor:pointer;font-size:11px;
+}
+.tool-message{max-width:1100px;margin:12px auto 0;text-align:center;color:#64748b;font-size:12px;min-height:18px}
+
+.digital-section{max-width:none;background:#fff}
+.digital-grid{
+  max-width:1100px;margin:auto;display:grid;
+  grid-template-columns:repeat(4,1fr);gap:14px;
+}
+.digital-card{
+  padding:20px;border:1px solid #e2e8f0;border-radius:14px;
+  background:#fff;box-shadow:0 4px 14px rgba(15,23,42,.05);
+}
+.digital-card span{font-size:25px}
+.digital-card h3{font-size:16px;margin:7px 0 5px;color:#0f172a}
+.digital-card p{font-size:12px;color:#64748b;line-height:1.55}
+.digital-card small{display:inline-block;margin-top:10px;color:#2563eb;font-weight:800;font-size:10px}
+
+.content-section{background:#f8fafc;max-width:none}
+.content-preview{
+  max-width:1100px;margin:auto;padding:19px;
+  border:1px solid #dbe5f0;border-radius:15px;background:#fff;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+}
+.content-preview-main{display:flex;gap:14px;align-items:center}
+.content-play{
+  width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+  background:#eff6ff;color:#2563eb;font-size:18px
+}
+.content-preview h3{font-size:17px;color:#0f172a}
+.content-preview p{font-size:12px;color:#64748b}
+.content-link{font-size:12px;font-weight:800;color:#2563eb;text-decoration:none;white-space:nowrap}
+
+.offline-cta-section{max-width:none;background:#111827}
+.offline-cta{
+  max-width:1100px;margin:auto;padding:26px;border:1px solid #263952;
+  border-radius:16px;background:linear-gradient(135deg,#111827,#172b48);
+  color:#fff;display:flex;align-items:center;justify-content:space-between;gap:25px
+}
+.offline-cta h2{text-align:left;margin:0 0 7px;color:#fff;font-size:24px}
+.offline-cta p{color:#cbd5e1;font-size:13px;max-width:690px}
+.section-kicker.light{color:#93c5fd}
+.offline-cta-buttons{white-space:nowrap}
+
+.faq-section{background:#fff}
+.faq-list{max-width:850px;margin:auto}
+.faq-list details{
+  border:1px solid #e2e8f0;border-radius:11px;margin-bottom:9px;
+  background:#fff;overflow:hidden
+}
+.faq-list summary{
+  cursor:pointer;padding:14px 16px;font-size:14px;font-weight:800;color:#0f172a;
+}
+.faq-list details p{padding:0 16px 15px;color:#64748b;font-size:12px}
+
+.mobile-action-bar{display:none}
+
+@media(max-width:850px){
+  .problem-grid{grid-template-columns:repeat(2,1fr)}
+  .digital-grid{grid-template-columns:repeat(2,1fr)}
+  .offline-cta{flex-direction:column;align-items:flex-start}
+  .offline-cta h2{font-size:21px}
+  .content-preview{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:600px){
+  .problem-grid{grid-template-columns:1fr 1fr;gap:9px}
+  .problem-card{padding:13px 11px}
+  .problem-card strong{font-size:12px}
+  .problem-card small{font-size:9px}
+  .problem-result{flex-direction:column;align-items:flex-start}
+  .logic-flow{gap:5px}
+  .logic-step{min-width:105px;padding:12px 8px}
+  .logic-arrow{display:none}
+  .digital-grid{grid-template-columns:1fr}
+  .content-preview{padding:15px}
+  .offline-cta{padding:20px}
+  .offline-cta-buttons{white-space:normal}
+  .offline-cta-buttons .btn{margin:5px 3px 0 0}
+  .faq-list summary{font-size:13px}
+  .mobile-action-bar{
+    display:flex;position:fixed;bottom:0;left:0;right:0;z-index:9999;
+    background:#fff;border-top:1px solid #dbe5f0;
+    box-shadow:0 -6px 20px rgba(15,23,42,.12)
+  }
+  .mobile-action-bar a{
+    flex:1;text-align:center;padding:10px 4px;text-decoration:none;
+    font-size:10px;font-weight:850;color:#0f172a
+  }
+  .mobile-action-bar a+ a{border-left:1px solid #e2e8f0}
+  .mobile-action-bar .m-call{color:#2563eb}
+  .mobile-action-bar .m-wa{color:#16a34a}
+  .mobile-action-bar .m-map{color:#475569}
+  body{padding-bottom:48px}
+}
+
+  
+    /* ===== FINAL PROFESSIONAL HOMEPAGE LAYER ===== */
+    header {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(96,165,250,.10), transparent 28%),
+        linear-gradient(135deg,#0f1f35,#172b46);
+      padding: 30px 20px 26px;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .18;
+      background:
+        linear-gradient(90deg, transparent 24%, rgba(148,163,184,.25) 25%, transparent 26%, transparent 49%, rgba(148,163,184,.25) 50%, transparent 51%, transparent 74%, rgba(148,163,184,.25) 75%, transparent 76%),
+        linear-gradient(transparent 24%, rgba(148,163,184,.20) 25%, transparent 26%, transparent 49%, rgba(148,163,184,.20) 50%, transparent 51%, transparent 74%, rgba(148,163,184,.20) 75%, transparent 76%);
+      background-size: 110px 70px;
+      pointer-events: none;
+    }
+    header > * { position: relative; z-index: 1; }
+
+    .trading-test-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 20px 8px;
+    }
+    .trading-test-card {
+      background: #ffffff;
+      border: 1px solid #dbe3ee;
+      border-radius: 14px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      box-shadow: 0 5px 18px rgba(15,23,42,.05);
+    }
+    .trading-test-copy h2 {
+      margin: 0 0 5px;
+      text-align: left;
+      font-size: 21px;
+      color: #172033;
+    }
+    .trading-test-copy p {
+      margin: 0;
+      color: #64748b;
+      font-size: 14px;
+    }
+    .trading-test-btn {
+      flex: 0 0 auto;
+      display: inline-block;
+      padding: 11px 17px;
+      border-radius: 9px;
+      background: #334e68;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .loss-recovery-strip {
+      max-width: 1100px;
+      margin: 10px auto 0;
+      padding: 8px 20px;
+      color: #64748b;
+      font-size: 12px;
+      text-align: center;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+    @media(max-width:700px) {
+      .trading-test-card {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .trading-test-btn {
+        width: 100%;
+        text-align: center;
+      }
+      .trading-test-copy h2 { font-size: 19px; }
+    }
+
+  </style>
+
 </head>
+
+
 <body>
 
-<div class="login-page" id="loginPage">
-  <div class="login-card">
-    <h1>🔐 Admin Login</h1>
-    <p>Forex Trap Trading Classes — Lead Management</p>
 
-    <button class="primary-btn" id="googleLoginBtn">
-      Continue with Google
-    </button>
-
-    <div class="error" id="loginError"></div>
-
-    <div style="margin-top:14px;text-align:center;font-size:10px;color:#64748b;">
-      Only the authorized admin Google account can access this dashboard.
+<header class="premium-header">
+  <div class="header-chart-bg" aria-hidden="true">
+    <svg viewBox="0 0 900 190" preserveAspectRatio="none">
+      <path d="M0 145 L70 132 L118 148 L172 110 L225 126 L280 76 L332 92 L390 58 L446 80 L500 42 L558 70 L612 30 L670 52 L720 20 L780 44 L835 12 L900 28" fill="none" stroke="rgba(96,165,250,.22)" stroke-width="3"/>
+      <path d="M0 150 L70 138 L118 153 L172 116 L225 132 L280 82 L332 98 L390 64 L446 86 L500 48 L558 76 L612 36 L670 58 L720 26 L780 50 L835 18 L900 34 L900 190 L0 190Z" fill="rgba(37,99,215,.055)"/>
+      <line x1="0" y1="170" x2="900" y2="170" stroke="rgba(255,255,255,.07)"/>
+      <line x1="0" y1="125" x2="900" y2="125" stroke="rgba(255,255,255,.05)"/>
+      <line x1="0" y1="80" x2="900" y2="80" stroke="rgba(255,255,255,.05)"/>
+    </svg>
+  </div>
+  <div class="header-content">
+    <div class="header-eyebrow">TRADING EDUCATION • PRICE ACTION • MARKET LOGIC</div>
+    <h1>Stock Market &amp; Forex Trading Classes</h1>
+    <p>Stock Market & Trading Education <span>|</span> Jhotwara, Jaipur</p>
+    <div class="market-motif" aria-hidden="true">
+      <span class="buy">▲ BUY</span><span>│</span><span class="sell">▼ SELL</span><span>│</span><span>CALL ↗</span><span>│</span><span>PUT ↘</span><span>│</span><span>LIQUIDITY</span><span>│</span><span>BREAKOUT</span>
     </div>
+  </div>
+<div style="margin-top:10px;font-size:12px;color:#bfdbfe;">Practical Learning • Jhotwara, Jaipur • Stock Market • Forex • Gold</div>
+</header>
+
+<!-- TOP DYNAMIC TRADING HELP BAR -->
+<div class="top-help-bar">
+  <div class="top-help-inner">
+    <div class="top-help-message">
+      <span class="top-help-dot"></span>
+      <div class="top-help-copy">
+        <strong id="lossHelpTitle">ट्रेडिंग में लगातार Loss हो रहा है?</strong>
+        <span id="lossHelpSub">अपनी Trading Mistakes और Risk Management को समझने के लिए बात करें।</span>
+      </div>
+    </div>
+    <a class="top-help-btn" href="https://wa.me/916350566010?text=Hello%2C%20mujhe%20trading%20loss%20aur%20risk%20management%20ke%20baare%20mein%20baat%20karni%20hai." target="_blank" rel="noopener noreferrer">💬 WhatsApp पर बात करें →</a>
   </div>
 </div>
 
+<!-- TRADINGVIEW LIVE MARKET TICKER -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
 
-<div class="dashboard" id="dashboard">
-  <header class="topbar">
-    <div class="brand"><strong>📊 Trading Lead Dashboard</strong><span>Forex Trap Trading Classes • Jhotwara, Jaipur</span></div>
-    <button class="logout" id="logoutBtn">Logout</button>
-  </header>
-
-  <main class="container">
-    <div class="notice">🔒 Authenticated admin area. Firestore rules must restrict lead reads/updates to trusted admin accounts.</div>
-
-    <section class="stats">
-      <div class="stat"><span>Total Leads</span><strong id="totalCount">0</strong></div>
-      <div class="stat"><span>New</span><strong id="newCount">0</strong></div>
-      <div class="stat"><span>Contacted</span><strong id="contactedCount">0</strong></div>
-      <div class="stat"><span>Visit Scheduled</span><strong id="visitCount">0</strong></div>
-      <div class="stat"><span>Joined</span><strong id="joinedCount">0</strong></div>
-    </section>
-
-    <section class="toolbar">
-      <input id="searchBox" type="search" placeholder="Search name / mobile / interest...">
-      <select id="statusFilter">
-        <option value="">All Statuses</option>
-        <option>New</option><option>Contacted</option><option>Interested</option>
-        <option>Visit Scheduled</option><option>Joined</option><option>Follow Up</option>
-        <option>Not Interested</option><option>Closed</option>
-      </select>
-      <button class="refresh" id="refreshBtn">↻ Refresh Leads</button>
-    </section>
-
-    <section class="table-wrap">
-      <table>
-        <thead><tr>
-          <th>Lead</th><th>Interest / Experience</th><th>Problem</th>
-          <th>Joining</th><th>Message</th><th>Status</th><th>Notes / Follow-up</th>
-        </tr></thead>
-        <tbody id="leadBody"><tr><td colspan="7" class="empty">Login and load leads.</td></tr></tbody>
-      </table>
-    </section>
-  </main>
+  <script
+    type="text/javascript"
+    src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+    async
+  >
+  {
+    "symbols": [
+      {
+        "proName": "OANDA:XAUUSD",
+        "title": "Gold / XAUUSD"
+      },
+      {
+        "proName": "NSE:NIFTY",
+        "title": "Nifty 50"
+      },
+      {
+        "proName": "NSE:BANKNIFTY",
+        "title": "Bank Nifty"
+      }
+    ],
+    "showSymbolLogo": true,
+    "colorTheme": "dark",
+    "isTransparent": false,
+    "displayMode": "adaptive",
+    "locale": "en"
+  }
+  </script>
 </div>
 
+<!-- =========================
+     TRADING TEST TOOL
+     ========================= -->
+<section class="trading-test-section" aria-label="Trading Testing Game">
+  <div class="trading-test-card">
+    <div class="trading-test-copy">
+      <h2>🎮 अपना Trading Test करें</h2>
+      <p>Virtual Money से BUY / SELL करके अपना Profit &amp; Loss समझें — Real Money नहीं.</p>
+    </div>
+    <a class="trading-test-btn" href="trading-game.html">Trading Test शुरू करें →</a>
+  </div>
+</section>
+
+<div class="loss-recovery-strip">
+  Loss Recovery के लिए अपनी Trading Approach, Entry और Risk Management को समझना ज़रूरी है — पहले practice, फिर disciplined trading.
+</div>
+
+<!-- =========================
+     HERO SECTION
+     ========================= -->
+
+<div class="hero">
+
+  <div class="hero-content">
+
+
+    <!-- LEFT SIDE -->
+
+    <div class="hero-copy">
+
+      <h2>
+        Jaipur में Practical Trading सीखें
+      </h2>
+
+      <p>
+        Stock Market, Intraday, Nifty, Bank Nifty, Forex, Gold XAUUSD,
+        Price Action, Technical Analysis और Trap Trading concepts को
+        practical market logic के साथ समझें.
+      </p>
+
+      <div class="hero-badges">
+        <span class="hero-badge">📍 <span class="hero-location">Jhotwara, Jaipur</span></span>
+        <span class="hero-badge">📈 Practical Market Learning</span>
+        <span class="hero-badge">💬 Direct WhatsApp Enquiry</span>
+      </div>
+
+      <div class="buttons">
+
+        <a
+          class="btn call"
+          href="tel:+916350566010"
+        >
+          📞 Call 6350566010
+        </a>
+
+
+        <a
+          class="btn whatsapp"
+          href="https://wa.me/916350566010?text=Hello%2C%20I%20want%20to%20know%20about%20trading%20classes."
+          target="_blank"
+        >
+          💬 WhatsApp Us
+        </a>
+
+      </div>
+
+
+
+      <!-- SCROLL GUIDE -->
+
+      <div
+        style="
+          margin-top:18px;
+          text-align:center;
+          color:#64748b;
+          font-size:13px;
+        "
+      >
+        ↓ Scroll to explore live markets & trading logic
+      </div>
+
+      <!-- JHOTWARA OFFLINE CLASS MAP -->
+      <div class="hero-map-card">
+        <div class="hero-map-header">
+          <div>
+            <div class="hero-map-kicker">📍 OFFLINE TRADING CLASS</div>
+            <h3>Jhotwara, Jaipur</h3>
+            <p>58A, Gosai Marg, Udyog Nagar, Jhotwara, Jaipur, Rajasthan 302012</p>
+          </div>
+
+          <a
+            href="https://maps.app.goo.gl/jUSizzP7Bh6d6jA6A"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero-map-button"
+          >
+            🗺️ Open in Google Maps
+          </a>
+        </div>
+
+        <div class="hero-map-frame">
+          <iframe
+            title="Forex Trap Trading Classes Jhotwara Jaipur Location"
+            src="https://www.google.com/maps?q=58A%2C%20Gosai%20Marg%2C%20Udyog%20Nagar%2C%20Jhotwara%2C%20Jaipur%2C%20Rajasthan%20302012&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <!-- RIGHT SIDE ENQUIRY -->
+
+    <div class="trading-enquiry-box">
+
+      <h2>
+        📩 Start Your Trading Journey
+      </h2>
+
+      <p class="enquiry-subtitle">
+        Tell us what you want to learn and we'll contact you.
+      </p>
+
+
+      <form onsubmit="sendTradingEnquiry(event)">
+
+
+        <input
+          type="text"
+          id="traderName"
+          placeholder="Your Name"
+          maxlength="60"
+          required
+        >
+
+
+        <input
+          type="tel"
+          id="traderMobile"
+          placeholder="Mobile Number"
+          inputmode="numeric"
+          pattern="[0-9]{10}"
+          maxlength="10"
+          required
+        >
+
+
+        <select
+          id="tradingInterest"
+          required
+        >
+
+          <option value="">
+            I want to learn...
+          </option>
+
+          <option>
+            Forex Trading
+          </option>
+
+          <option>
+            Gold / XAUUSD
+          </option>
+
+          <option>
+            Nifty 50
+          </option>
+
+          <option>
+            Bank Nifty
+          </option>
+
+          <option>
+            Intraday Trading
+          </option>
+
+          <option>
+            Trap Trading
+          </option>
+
+          <option>
+            Price Action
+          </option>
+
+          <option>
+            Technical Analysis
+          </option>
+
+        </select>
+
+
+        <select
+          id="traderExperience"
+          required
+        >
+
+          <option value="">
+            Trading Experience
+          </option>
+
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+
+        </select>
+
+        <select id="traderProblem">
+          <option value="">Main Trading Problem (Optional)</option>
+          <option>Constant Loss</option>
+          <option>Bar-bar Stop Loss</option>
+          <option>Overtrading</option>
+          <option>Fake Breakout</option>
+          <option>FOMO</option>
+          <option>Risk Management</option>
+          <option>Strategy Confusion</option>
+        </select>
+
+        <select id="joiningPreference">
+          <option value="">Preferred Joining Time (Optional)</option>
+          <option>As soon as possible</option>
+          <option>Within 1 week</option>
+          <option>Within 1 month</option>
+          <option>Just want information</option>
+        </select>
+
+        <textarea
+          id="traderMessage"
+          placeholder="What would you like to learn?"
+          maxlength="300"
+          rows="3"
+        ></textarea>
+
+
+        <button
+          type="submit"
+          class="enquiry-btn"
+        >
+          💬 Send Enquiry on WhatsApp
+        </button>
+
+
+        <div class="enquiry-note">
+          Your enquiry is saved securely for follow-up. We will contact you regarding your enquiry.
+        </div>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     COURSES
+     ========================= -->
+
+<section>
+
+  <h2>
+    Our Trading Courses
+  </h2>
+
+
+  <div class="cards">
+
+
+    <div class="card">
+
+      <h3>
+        📈 Stock Market Trading
+      </h3>
+
+      <p>
+        Learn stock market basics, market structure,
+        price behaviour and practical trading concepts.
+      </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+      <h3>
+        ⚡ Intraday Trading
+      </h3>
+
+      <p>
+        Understand intraday setups, momentum,
+        support, resistance and market behaviour.
+      </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+      <h3>
+        📊 Nifty & Bank Nifty
+      </h3>
+
+      <p>
+        Learn practical concepts related to Nifty,
+        Bank Nifty and index trading.
+      </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+      <h3>
+        💱 Forex Trading
+      </h3>
+
+      <p>
+        Learn Forex market structure, price action,
+        liquidity and practical trading concepts.
+      </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+      <h3>
+        🥇 Gold / XAUUSD
+      </h3>
+
+      <p>
+        Understand Gold trading, XAUUSD price behaviour,
+        momentum and important market zones.
+      </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+      <h3>
+        🎯 Trap Trading
+      </h3>
+
+      <p>
+        Learn breakout traps, fake breakouts,
+        retests, liquidity and market behaviour.
+      </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+      <h3>
+        📐 Price Action
+      </h3>
+
+      <p>
+        Learn candles, support and resistance,
+        market structure and price behaviour.
+      </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+      <h3>
+        🛡️ Risk Management
+      </h3>
+
+      <p>
+        Understand stop loss, position sizing,
+        risk management and trading discipline.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+
+<!-- =========================
+     TRADING PROBLEM SELECTOR
+     ========================= -->
+<section class="problem-section">
+  <div class="section-kicker">TRADING PROBLEM → RIGHT LEARNING PATH</div>
+  <h2>Aapki Trading Problem Kya Hai?</h2>
+  <p class="section-intro">
+    Apni current problem select karein. Aapko us problem se related practical learning direction milegi.
+  </p>
+
+  <div class="problem-grid">
+    <button class="problem-card" type="button" data-problem="Loss">
+      <span>🔴</span><strong>Constant Loss</strong><small>Loss ko analyse karna</small>
+    </button>
+    <button class="problem-card" type="button" data-problem="Stop Loss">
+      <span>🟠</span><strong>Bar-bar Stop Loss</strong><small>Setup & risk samajhna</small>
+    </button>
+    <button class="problem-card" type="button" data-problem="Overtrading">
+      <span>🟡</span><strong>Overtrading</strong><small>Discipline improve karna</small>
+    </button>
+    <button class="problem-card" type="button" data-problem="Fake Breakout">
+      <span>🔵</span><strong>Fake Breakout</strong><small>Trap behaviour samajhna</small>
+    </button>
+    <button class="problem-card" type="button" data-problem="FOMO">
+      <span>🟣</span><strong>FOMO</strong><small>Entry behaviour samajhna</small>
+    </button>
+    <button class="problem-card" type="button" data-problem="Risk Management">
+      <span>🛡️</span><strong>Risk Management</strong><small>Risk & position sizing</small>
+    </button>
+  </div>
+
+  <div class="problem-result" id="problemResult">
+    <strong>💡 Select a problem above</strong>
+    <span>Phir WhatsApp par us problem ke baare mein discussion start karein.</span>
+  </div>
+</section>
+
+<!-- =========================
+     TRAP TRADING LOGIC
+     ========================= -->
+<section class="logic-section">
+  <div class="section-kicker">OUR CORE EDUCATIONAL FRAMEWORK</div>
+  <h2>🎯 Trap Trading Logic</h2>
+  <p class="section-intro">
+    Market ko sirf candle ya indicator se nahi, balki trend, zone, strength aur price behaviour ke context mein samajhne ka approach.
+  </p>
+
+  <div class="logic-flow">
+    <div class="logic-step"><b>01</b><strong>Trend</strong><span>Market direction</span></div>
+    <div class="logic-arrow">→</div>
+    <div class="logic-step"><b>02</b><strong>Zone</strong><span>Important area</span></div>
+    <div class="logic-arrow">→</div>
+    <div class="logic-step"><b>03</b><strong>Strength</strong><span>Price behaviour</span></div>
+    <div class="logic-arrow">→</div>
+    <div class="logic-step"><b>04</b><strong>Invite</strong><span>Participation</span></div>
+    <div class="logic-arrow">→</div>
+    <div class="logic-step trap"><b>05</b><strong>Trap</strong><span>Behaviour shift</span></div>
+    <div class="logic-arrow">→</div>
+    <div class="logic-step"><b>06</b><strong>Retest</strong><span>Confirmation context</span></div>
+  </div>
+
+  <div class="center-cta">
+    <a class="btn call" href="tel:+916350566010">📞 Discuss Trap Trading</a>
+    <a class="btn whatsapp" href="https://wa.me/916350566010?text=Hello%2C%20mujhe%20Trap%20Trading%20Logic%20ke%20baare%20mein%20information%20chahiye." target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+  </div>
+</section>
+
+<!-- =========================
+     FREE TRADING TOOLS
+     ========================= -->
+<section class="tools-section">
+  <div class="section-kicker">FREE EDUCATIONAL TOOLS</div>
+  <h2>🧮 Trading Tools</h2>
+  <p class="section-intro">
+    Free tools future mein website traffic, learning aur trading-journal workflow ko support karenge.
+  </p>
+
+  <div class="cards tools-cards">
+    <div class="card tool-card">
+      <div class="tool-icon">⚖️</div>
+      <h3>Risk / Reward Calculator</h3>
+      <p>Entry, Stop Loss aur Target ke basis par Risk-Reward relationship samajhne ke liye.</p>
+      <button type="button" class="tool-btn" onclick="openToolMessage('Risk / Reward Calculator')">Coming Soon →</button>
+    </div>
+    <div class="card tool-card">
+      <div class="tool-icon">📏</div>
+      <h3>Position Size Calculator</h3>
+      <p>Risk percentage aur stop-loss distance ke context mein position sizing ko samajhne ke liye.</p>
+      <button type="button" class="tool-btn" onclick="openToolMessage('Position Size Calculator')">Coming Soon →</button>
+    </div>
+    <div class="card tool-card">
+      <div class="tool-icon">📒</div>
+      <h3>Trading Journal</h3>
+      <p>Trades, setup, mistake, risk aur result ko structured way mein record karne ka future tool.</p>
+      <button type="button" class="tool-btn" onclick="openToolMessage('Trading Journal')">Coming Soon →</button>
+    </div>
+  </div>
+
+  <div class="tool-message" id="toolMessage"></div>
+</section>
+
+<!-- =========================
+     ONLINE / DIGITAL REVENUE
+     ========================= -->
+<section class="digital-section">
+  <div class="section-kicker">ONLINE LEARNING & DIGITAL REVENUE</div>
+  <h2>🌐 Learn Beyond The Classroom</h2>
+  <p class="section-intro">
+    Website ko future mein offline classes ke saath online educational products aur digital services ke liye bhi use kiya ja sakta hai.
+  </p>
+
+  <div class="digital-grid">
+    <div class="digital-card">
+      <span>🎓</span>
+      <h3>Digital Courses</h3>
+      <p>Recorded educational lessons, structured modules aur downloadable learning material.</p>
+      <small>Future module</small>
+    </div>
+    <div class="digital-card">
+      <span>🔐</span>
+      <h3>Premium Learning</h3>
+      <p>Premium educational content, community aur additional learning resources.</p>
+      <small>Future module</small>
+    </div>
+    <div class="digital-card">
+      <span>📚</span>
+      <h3>Digital Products</h3>
+      <p>Trading journal templates, worksheets, checklists aur educational resources.</p>
+      <small>Future module</small>
+    </div>
+    <div class="digital-card">
+      <span>🤝</span>
+      <h3>Partner Programs</h3>
+      <p>Where appropriate, approved broker or platform partner programs can be integrated transparently.</p>
+      <small>Future module</small>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     YOUTUBE / CONTENT
+     ========================= -->
+<section class="content-section">
+  <div class="section-kicker">FREE CONTENT</div>
+  <h2>🎥 Trading Education Content</h2>
+  <p class="section-intro">
+    YouTube videos aur website articles ko future mein yahan dynamically display kiya ja sakta hai.
+  </p>
+
+  <div class="content-preview">
+    <div class="content-preview-main">
+      <span class="content-play">▶</span>
+      <div>
+        <h3>Latest Trading Videos</h3>
+        <p>Trap Trading, Price Action, Risk Management aur Market Behaviour par educational content.</p>
+      </div>
+    </div>
+    <a class="content-link" href="https://www.youtube.com/results?search_query=Trap+Trading+Logic" target="_blank" rel="noopener noreferrer">YouTube par dekhein →</a>
+  </div>
+</section>
+
+<!-- =========================
+     OFFLINE COACHING CTA
+     ========================= -->
+<section class="offline-cta-section">
+  <div class="offline-cta">
+    <div>
+      <div class="section-kicker light">OFFLINE TRADING EDUCATION</div>
+      <h2>📍 Jhotwara, Jaipur mein Trading Classes</h2>
+      <p>
+        Agar aap classroom-based practical trading education ke baare mein information chahte hain,
+        pehle enquiry karein aur class details samjhein.
+      </p>
+    </div>
+    <div class="offline-cta-buttons">
+      <a class="btn call" href="tel:+916350566010">📞 Call Now</a>
+      <a class="btn whatsapp" href="https://wa.me/916350566010?text=Hello%2C%20mujhe%20Jhotwara%20Jaipur%20trading classes%20ke%20baare%20mein%20information%20chahiye." target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     FAQ / SEO
+     ========================= -->
+<section class="faq-section">
+  <div class="section-kicker">FAQ</div>
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details>
+      <summary>Trading classes Jaipur mein kahan hain?</summary>
+      <p>Forex Trap Trading Classes ka listed classroom location Jhotwara, Jaipur mein hai. Visit se pehle enquiry karke current class details confirm karein.</p>
+    </details>
+    <details>
+      <summary>Kaunse trading topics sikhaye jaate hain?</summary>
+      <p>Stock Market, Intraday, Nifty, Bank Nifty, Forex, Gold/XAUUSD, Price Action, Technical Analysis, Trap Trading aur Risk Management jaise educational topics cover kiye jaate hain.</p>
+    </details>
+    <details>
+      <summary>Kya beginner join kar sakta hai?</summary>
+      <p>Website ke current course information ke mutabik beginners ke liye concepts ko structured aur simple manner mein explain kiya jata hai.</p>
+    </details>
+    <details>
+      <summary>Kya trading mein profit guaranteed hai?</summary>
+      <p>Nahi. Trading mein market risk hota hai. Website ka purpose educational learning hai; profit ya returns ki guarantee nahi di jaati.</p>
+    </details>
+  </div>
+</section>
+
+<!-- =========================
+     ABOUT
+     ========================= -->
+
+<section>
+
+  <h2>
+    About Our Classes
+  </h2>
+
+
+  <div class="about">
+
+    <p>
+
+      <strong>
+        Forex Trap Trading Classes
+      </strong>
+
+      is a trading education and training centre
+      located in Jhotwara, Jaipur.
+
+      We provide practical trading education
+      for beginners and traders who want to
+      understand financial markets in a
+      structured way.
+
+    </p>
+
+
+    <br>
+
+
+    <p>
+
+      Our training covers stock market education,
+      intraday trading, Nifty, Bank Nifty, Forex,
+      Gold XAUUSD, technical analysis, price action,
+      support and resistance, market structure,
+      breakout and retest concepts, trap trading
+      and risk management.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     WHY LEARN WITH US
+     ========================= -->
+
+<section>
+
+  <h2>
+    Why Learn With Us?
+  </h2>
+
+
+  <div class="cards">
+
+
+    <div class="card">
+
+      <h3>
+        ✅ Practical Learning
+      </h3>
+
+      <p>
+        Focus on understanding market behaviour
+        and practical concepts.
+      </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+      <h3>
+        ✅ Multiple Markets
+      </h3>
+
+      <p>
+        Stock Market, Indices, Forex
+        and Gold XAUUSD concepts.
+      </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+      <h3>
+        ✅ Beginner Friendly
+      </h3>
+
+      <p>
+        Concepts explained in a simple
+        and structured manner.
+      </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+      <h3>
+        ✅ Jaipur Location
+      </h3>
+
+      <p>
+        Trading education available
+        in Jhotwara, Jaipur.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     PUBLIC COMMENTS
+     ========================= -->
+
+<section class="comments-section">
+
+  <div class="comments-container">
+
+
+    <h2>
+      💬 Visitor Comments
+    </h2>
+
+
+    <div class="comment-form">
+
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Your Name"
+        maxlength="50"
+      >
+
+
+      <textarea
+        id="comment"
+        placeholder="Write your comment..."
+        maxlength="500"
+      ></textarea>
+
+
+      <button
+        class="comment-btn"
+        id="submitComment"
+        onclick="addComment()"
+      >
+        Post Comment
+      </button>
+
+
+      <div
+        id="commentMessage"
+        class="comment-message"
+      ></div>
+
+
+    </div>
+
+
+
+    <div
+      id="commentList"
+      class="comment-list"
+    >
+
+      <div class="no-comments">
+        Loading comments...
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     LOCATION
+     ========================= -->
+<section class="location-section">
+  <div class="location-card">
+    <div class="location-copy">
+      <div class="location-kicker">📍 VISIT US</div>
+      <h2>Forex Trap Trading Classes — Jhotwara, Jaipur</h2>
+      <p>58A, Gosai Marg, Udyog Nagar, Jhotwara, Jaipur, Rajasthan 302012</p>
+      <a href="https://maps.app.goo.gl/jUSizzP7Bh6d6jA6A"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="map-cta">🗺️ Open Location in Google Maps ↗</a>
+    </div>
+    <div class="location-visual">📍<br><small>Jhotwara<br>Jaipur</small></div>
+  </div>
+</section>
+
+<!-- =========================
+     CONTACT
+     ========================= -->
+
+<section class="contact">
+
+
+  <h2>
+    Contact Forex Trap Trading Classes
+  </h2>
+
+
+  <p>
+    📍 58A, Gosai Marg, Udyog Nagar, Jhotwara,
+    Jaipur, Rajasthan 302012
+  </p>
+
+
+  <p style="margin-top:10px;">
+    📞 6350566010
+  </p>
+
+
+  <div class="buttons">
+
+
+    <a
+      class="btn call"
+      href="tel:+916350566010"
+    >
+      📞 Call Now
+    </a>
+
+
+    <a
+      class="btn whatsapp"
+      href="https://wa.me/916350566010?text=Hello%2C%20I%20want%20information%20about%20your%20trading%20classes."
+      target="_blank"
+    >
+      💬 WhatsApp
+    </a>
+
+
+  </div>
+
+</section>
+
+
+
+
+<!-- MOBILE QUICK ACTION BAR -->
+<div class="mobile-action-bar" aria-label="Quick contact actions">
+  <a class="m-call" href="tel:+916350566010">📞 Call</a>
+  <a class="m-wa" href="https://wa.me/916350566010?text=Hello%2C%20mujhe%20trading%20classes%20ke%20baare%20mein%20information%20chahiye." target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+  <a class="m-map" href="https://maps.app.goo.gl/jUSizzP7Bh6d6jA6A" target="_blank" rel="noopener noreferrer">📍 Map</a>
+</div>
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+  © 2026 Forex Trap Trading Classes |
+  Jhotwara, Jaipur
+
+<div style="margin-top:8px;font-size:11px;color:#94a3b8;max-width:850px;margin-left:auto;margin-right:auto;">
+      Educational purpose only. Trading involves market risk. No profit, return or loss-recovery guarantee is provided.
+      Users should make their own financial decisions.
+    </div>
+</footer>
+
+
+
+<!-- =========================
+     TRADING ENQUIRY JAVASCRIPT
+     ========================= -->
+
+<script>
+
+async function sendTradingEnquiry(event) {
+
+  event.preventDefault();
+
+  const form = event.target;
+  const submitButton = form.querySelector(".enquiry-btn");
+
+  const name = document.getElementById("traderName").value.trim();
+  const mobile = document.getElementById("traderMobile").value.trim();
+  const interest = document.getElementById("tradingInterest").value;
+  const experience = document.getElementById("traderExperience").value;
+  const problem = document.getElementById("traderProblem")?.value || "";
+  const joiningPreference = document.getElementById("joiningPreference")?.value || "";
+  const message = document.getElementById("traderMessage").value.trim();
+
+  if (!/^\d{10}$/.test(mobile)) {
+    alert("Please enter a valid 10-digit mobile number.");
+    return;
+  }
+
+  const leadData = {
+    name: name,
+    mobile: mobile,
+    interest: interest,
+    experience: experience,
+    problem: problem,
+    joiningPreference: joiningPreference,
+    message: message,
+    source: "Website Enquiry Form",
+    status: "New",
+    notes: "",
+    followUpDate: "",
+    createdAt: window.firebaseServerTimestamp()
+  };
+
+  try {
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Saving Enquiry...";
+
+    /* Save lead to Firestore */
+    await window.firebaseAddDoc(
+      window.firebaseLeadsRef,
+      leadData
+    );
+
+    const whatsappNumber = "916350566010";
+
+    const whatsappMessage =
+`*New Trading Enquiry*
+
+👤 Name: ${name}
+
+📱 Mobile: ${mobile}
+
+📈 Interested In: ${interest}
+
+🎯 Experience: ${experience}
+
+⚠️ Main Problem: ${problem || "Not provided"}
+
+🗓️ Joining Preference: ${joiningPreference || "Not provided"}
+
+💬 Message: ${message || "Not provided"}
+
+I would like to know more about the trading classes.`;
+
+    const whatsappURL =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(whatsappMessage);
+
+    submitButton.textContent = "Opening WhatsApp...";
+
+    window.open(whatsappURL, "_blank");
+
+    submitButton.textContent = "✅ Enquiry Saved";
+
+    setTimeout(function(){
+      form.reset();
+      submitButton.disabled = false;
+      submitButton.textContent = "💬 Send Enquiry on WhatsApp";
+    }, 1800);
+
+  } catch (error) {
+
+    console.error("Lead save error:", error);
+
+    /* Even if Firestore is unavailable, don't block the WhatsApp enquiry. */
+    const whatsappNumber = "916350566010";
+
+    const whatsappMessage =
+`*New Trading Enquiry*
+
+👤 Name: ${name}
+
+📱 Mobile: ${mobile}
+
+📈 Interested In: ${interest}
+
+🎯 Experience: ${experience}
+
+⚠️ Main Problem: ${problem || "Not provided"}
+
+🗓️ Joining Preference: ${joiningPreference || "Not provided"}
+
+💬 Message: ${message || "Not provided"}
+
+I would like to know more about the trading classes.`;
+
+    const whatsappURL =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
+
+    submitButton.disabled = false;
+    submitButton.textContent = "💬 Send Enquiry on WhatsApp";
+
+    alert("WhatsApp enquiry opened. Lead database is temporarily unavailable.");
+  }
+
+}
+
+</script>
+
+
+
+<!-- =========================
+     FIREBASE FIRESTORE
+     ========================= -->
+
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut }
-  from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-import { getFirestore, collection, getDocs, updateDoc, doc }
-  from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
-const firebaseConfig = {
 
+  import {
+
+    initializeApp
+
+  }
+
+  from
+  "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+
+  import {
+
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    serverTimestamp
+
+  }
+
+  from
+  "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+
+
+  /* Firebase Configuration */
+
+  const firebaseConfig = {
 
 
     apiKey:
@@ -134,175 +2353,562 @@ const firebaseConfig = {
 
     measurementId:
       "G-ZSCH0E7R9H"
-};
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const leadsRef = collection(db, "leads");
+  };
 
-const loginPage = document.getElementById("loginPage");
-const dashboard = document.getElementById("dashboard");
-const googleLoginBtn = document.getElementById("googleLoginBtn");
-const loginError = document.getElementById("loginError");
-const leadBody = document.getElementById("leadBody");
-const searchBox = document.getElementById("searchBox");
-const statusFilter = document.getElementById("statusFilter");
-let allLeads = [];
 
-const ADMIN_EMAIL = "saif.anwar1618@gmail.com";
-const googleProvider = new GoogleAuthProvider();
 
-googleLoginBtn.addEventListener("click", async () => {
-  try {
-    googleLoginBtn.disabled = true;
-    googleLoginBtn.textContent = "Opening Google...";
-    loginError.textContent = "";
+  /* Initialize Firebase */
 
-    const result = await signInWithPopup(auth, googleProvider);
-    const user = result.user;
+  const app =
+    initializeApp(
+      firebaseConfig
+    );
 
-    if ((user.email || "").toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
-      await signOut(auth);
-      loginError.textContent = "Access denied. This Google account is not authorized.";
-      return;
+
+  const db =
+    getFirestore(app);
+
+
+
+  /* Firestore collection */
+
+  const commentsRef =
+    collection(
+      db,
+      "comments"
+    );
+
+  /* Trading enquiry leads */
+  const leadsRef =
+    collection(
+      db,
+      "leads"
+    );
+
+  /* Make lead helpers available to the enquiry form */
+  window.firebaseLeadsRef = leadsRef;
+  window.firebaseAddDoc = addDoc;
+  window.firebaseServerTimestamp = serverTimestamp;
+
+
+
+  /* Make function available to button */
+
+  window.addComment =
+    async function() {
+
+
+      const nameInput =
+        document.getElementById(
+          "name"
+        );
+
+
+      const commentInput =
+        document.getElementById(
+          "comment"
+        );
+
+
+      const message =
+        document.getElementById(
+          "commentMessage"
+        );
+
+
+      const button =
+        document.getElementById(
+          "submitComment"
+        );
+
+
+
+      const name =
+        nameInput
+        .value
+        .trim();
+
+
+      const comment =
+        commentInput
+        .value
+        .trim();
+
+
+
+      /* Validation */
+
+      if (name.length < 2) {
+
+        message.style.color =
+          "#dc2626";
+
+        message.textContent =
+          "Please enter your name.";
+
+        return;
+
+      }
+
+
+
+      if (comment.length < 1) {
+
+        message.style.color =
+          "#dc2626";
+
+        message.textContent =
+          "Please write a comment.";
+
+        return;
+
+      }
+
+
+
+      if (name.length > 50) {
+
+        message.style.color =
+          "#dc2626";
+
+        message.textContent =
+          "Name is too long.";
+
+        return;
+
+      }
+
+
+
+      if (comment.length > 500) {
+
+        message.style.color =
+          "#dc2626";
+
+        message.textContent =
+          "Comment is too long.";
+
+        return;
+
+      }
+
+
+
+      try {
+
+
+        button.disabled =
+          true;
+
+
+        button.textContent =
+          "Posting...";
+
+
+        message.textContent =
+          "";
+
+
+
+        /* Save comment to Firestore */
+
+        await addDoc(
+          commentsRef,
+          {
+
+            name: name,
+
+            comment: comment,
+
+            createdAt:
+              serverTimestamp()
+
+          }
+        );
+
+
+
+        /* Clear form */
+
+        nameInput.value =
+          "";
+
+        commentInput.value =
+          "";
+
+
+
+        message.style.color =
+          "#16a34a";
+
+
+        message.textContent =
+          "✅ Comment posted successfully!";
+
+
+
+        /* Reload comments */
+
+        await loadComments();
+
+
+      }
+
+      catch (error) {
+
+
+        console.error(error);
+
+
+        message.style.color =
+          "#dc2626";
+
+
+        message.textContent =
+          "❌ Unable to post comment. Please try again.";
+
+
+      }
+
+
+
+      button.disabled =
+        false;
+
+
+      button.textContent =
+        "Post Comment";
+
+
+    };
+
+
+
+  /* Load comments */
+
+  async function loadComments() {
+
+
+    const commentList =
+      document.getElementById(
+        "commentList"
+      );
+
+
+    try {
+
+
+      const snapshot =
+        await getDocs(
+          commentsRef
+        );
+
+
+      let comments = [];
+
+
+
+      snapshot.forEach(
+        (doc) => {
+
+
+          const data =
+            doc.data();
+
+
+          comments.push({
+
+            id:
+              doc.id,
+
+            name:
+              data.name ||
+              "Website Visitor",
+
+            comment:
+              data.comment ||
+              "",
+
+            createdAt:
+              data.createdAt
+
+          });
+
+
+        }
+      );
+
+
+
+      /* Newest comments first */
+
+      comments.sort(
+        (a, b) => {
+
+
+          const timeA =
+
+            a.createdAt?.toMillis
+
+              ? a.createdAt.toMillis()
+
+              : 0;
+
+
+          const timeB =
+
+            b.createdAt?.toMillis
+
+              ? b.createdAt.toMillis()
+
+              : 0;
+
+
+          return timeB - timeA;
+
+        }
+      );
+
+
+
+      commentList.innerHTML =
+        "";
+
+
+
+      if (
+        comments.length === 0
+      ) {
+
+
+        commentList.innerHTML = `
+
+          <div class="no-comments">
+
+            No comments yet.
+            Be the first to comment! 😊
+
+          </div>
+
+        `;
+
+
+        return;
+
+      }
+
+
+
+      comments.forEach(
+        (item) => {
+
+
+          const box =
+            document.createElement(
+              "div"
+            );
+
+
+          box.className =
+            "comment-box";
+
+
+
+          const name =
+            document.createElement(
+              "div"
+            );
+
+
+          name.className =
+            "comment-name";
+
+
+          name.textContent =
+            "👤 " +
+            item.name;
+
+
+
+          const text =
+            document.createElement(
+              "div"
+            );
+
+
+          text.className =
+            "comment-text";
+
+
+          text.textContent =
+            item.comment;
+
+
+
+          const date =
+            document.createElement(
+              "div"
+            );
+
+
+          date.className =
+            "comment-date";
+
+
+
+          if (
+            item.createdAt?.toDate
+          ) {
+
+
+            const d =
+              item.createdAt.toDate();
+
+
+            date.textContent =
+              d.toLocaleString(
+                "en-IN"
+              );
+
+
+          }
+
+          else {
+
+
+            date.textContent =
+              "Just now";
+
+          }
+
+
+
+          box.appendChild(
+            name
+          );
+
+
+          box.appendChild(
+            text
+          );
+
+
+          box.appendChild(
+            date
+          );
+
+
+          commentList.appendChild(
+            box
+          );
+
+
+        }
+      );
+
+
     }
 
-  } catch (error) {
-    console.error(error);
-    loginError.textContent = "Google login failed. Make sure Google Sign-in is enabled in Firebase.";
-  } finally {
-    googleLoginBtn.disabled = false;
-    googleLoginBtn.textContent = "Continue with Google";
-  }
-});
+    catch (error) {
 
-document.getElementById("logoutBtn").addEventListener("click", () => signOut(auth));
-document.getElementById("refreshBtn").addEventListener("click", loadLeads);
-searchBox.addEventListener("input", renderLeads);
-statusFilter.addEventListener("change", renderLeads);
 
-onAuthStateChanged(auth, async user => {
-  if (user) {
-    if ((user.email || "").toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
-      await signOut(auth);
-      loginError.textContent = "Access denied. This Google account is not authorized.";
-      return;
+      console.error(error);
+
+
+      commentList.innerHTML = `
+
+        <div class="no-comments">
+
+          Unable to load comments.
+
+        </div>
+
+      `;
+
     }
 
-    loginPage.style.display = "none";
-    dashboard.style.display = "block";
-    await loadLeads();
-  } else {
-    dashboard.style.display = "none";
-    loginPage.style.display = "grid";
-  }
-});
-
-async function loadLeads() {
-  leadBody.innerHTML = '<tr><td colspan="7" class="empty">Loading leads...</td></tr>';
-  try {
-    const snapshot = await getDocs(leadsRef);
-    allLeads = [];
-    snapshot.forEach(item => allLeads.push({id:item.id, ...item.data()}));
-    allLeads.sort((a,b) => {
-      const ta = a.createdAt?.toMillis ? a.createdAt.toMillis() : 0;
-      const tb = b.createdAt?.toMillis ? b.createdAt.toMillis() : 0;
-      return tb - ta;
-    });
-    updateStats();
-    renderLeads();
-  } catch (error) {
-    console.error(error);
-    leadBody.innerHTML = '<tr><td colspan="7" class="empty">Unable to load leads. Check Firestore Security Rules.</td></tr>';
-  }
-}
-
-function updateStats() {
-  const count = status => allLeads.filter(x => (x.status || "New") === status).length;
-  document.getElementById("totalCount").textContent = allLeads.length;
-  document.getElementById("newCount").textContent = count("New");
-  document.getElementById("contactedCount").textContent = count("Contacted");
-  document.getElementById("visitCount").textContent = count("Visit Scheduled");
-  document.getElementById("joinedCount").textContent = count("Joined");
-}
-
-function renderLeads() {
-  const q = searchBox.value.trim().toLowerCase();
-  const status = statusFilter.value;
-
-  const filtered = allLeads.filter(lead => {
-    const haystack = [lead.name,lead.mobile,lead.interest,lead.experience,lead.problem,lead.message]
-      .join(" ").toLowerCase();
-    return (!q || haystack.includes(q)) && (!status || (lead.status || "New") === status);
-  });
-
-  if (!filtered.length) {
-    leadBody.innerHTML = '<tr><td colspan="7" class="empty">No matching leads.</td></tr>';
-    return;
   }
 
-  leadBody.innerHTML = "";
 
-  filtered.forEach(lead => {
-    const tr = document.createElement("tr");
-    const created = lead.createdAt?.toDate ? lead.createdAt.toDate().toLocaleString("en-IN") : "Date unavailable";
 
-    tr.innerHTML = `
-      <td><strong>${escapeHtml(lead.name || "Unknown")}</strong><br>
-        <span class="muted">${escapeHtml(lead.mobile || "")}</span><br>
-        <span class="muted">${escapeHtml(created)}</span></td>
-      <td><strong>${escapeHtml(lead.interest || "—")}</strong><br>
-        <span class="muted">${escapeHtml(lead.experience || "—")}</span></td>
-      <td>${escapeHtml(lead.problem || "—")}</td>
-      <td>${escapeHtml(lead.joiningPreference || "—")}</td>
-      <td>${escapeHtml(lead.message || "—")}</td>
-      <td><select class="status-select" data-id="${lead.id}">${statusOptions(lead.status || "New")}</select></td>
-      <td>
-        <textarea class="notes" data-id="${lead.id}" placeholder="Admin notes...">${escapeHtml(lead.notes || "")}</textarea>
-        <input class="notes" data-followup="${lead.id}" type="date" value="${escapeHtml(lead.followUpDate || "")}">
-        <button class="save-note" data-save="${lead.id}">Save</button>
-      </td>`;
-    leadBody.appendChild(tr);
-  });
+  /* Load comments when page opens */
 
-  document.querySelectorAll(".status-select").forEach(select => {
-    select.addEventListener("change", async e => updateLead(e.target.dataset.id, {status:e.target.value}));
-  });
+  loadComments();
 
-  document.querySelectorAll("[data-save]").forEach(button => {
-    button.addEventListener("click", async () => {
-      const id = button.dataset.save;
-      const note = document.querySelector(`textarea[data-id="${id}"]`).value.trim();
-      const followUpDate = document.querySelector(`input[data-followup="${id}"]`).value;
-      await updateLead(id, {notes:note, followUpDate:followUpDate});
+
+</script>
+
+
+
+<script>
+(function(){
+  const messages = [
+    {
+      title: 'ट्रेडिंग में लगातार Loss हो रहा है?',
+      sub: 'अपनी Trading Mistakes और Risk Management को समझने के लिए बात करें।'
+    },
+    {
+      title: 'बार-बार Stop Loss लग रहा है?',
+      sub: 'अपने Setup, Risk Management और Trading Behaviour पर बात करें।'
+    },
+    {
+      title: 'Trading में Discipline और Risk सुधारना चाहते हैं?',
+      sub: 'Practical Market Logic के साथ अपनी Trading Approach को समझें।'
+    }
+  ];
+  const title=document.getElementById('lossHelpTitle');
+  const sub=document.getElementById('lossHelpSub');
+  if(!title || !sub) return;
+  let i=0;
+  setInterval(function(){
+    title.style.opacity='0';
+    sub.style.opacity='0';
+    setTimeout(function(){
+      i=(i+1)%messages.length;
+      title.textContent=messages[i].title;
+      sub.textContent=messages[i].sub;
+      title.style.opacity='1';
+      sub.style.opacity='1';
+    },220);
+  },4200);
+})();
+</script>
+
+
+<script>
+(function(){
+  const result = document.getElementById('problemResult');
+  const cards = document.querySelectorAll('.problem-card');
+
+  const messages = {
+    "Loss": "Loss ko promise ya recovery ke angle se nahi, balki setup, risk, execution aur trading behaviour ke angle se analyse karna useful hai.",
+    "Stop Loss": "Stop Loss ke context mein setup quality, entry logic, risk-reward aur position sizing ko samajhna important hai.",
+    "Overtrading": "Overtrading ke liye trade frequency, rules, emotional triggers aur discipline ko review karein.",
+    "Fake Breakout": "Fake breakout ko samajhne ke liye breakout context, strength, liquidity aur retest behaviour ko study karein.",
+    "FOMO": "FOMO ko samajhne ke liye entry trigger, missed-move behaviour aur predefined trading rules ko review karein.",
+    "Risk Management": "Risk management mein per-trade risk, Stop Loss, position sizing aur overall exposure ko samajhna useful hai."
+  };
+
+  cards.forEach(function(card){
+    card.addEventListener('click', function(){
+      cards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+
+      const problem = card.dataset.problem;
+      result.innerHTML =
+        '<strong>💡 ' + problem + '</strong>' +
+        '<span>' + (messages[problem] || 'Is topic par educational discussion ke liye WhatsApp par enquiry karein.') + '</span>';
     });
   });
-}
+})();
 
-async function updateLead(id, changes) {
-  try {
-    await updateDoc(doc(db, "leads", id), changes);
-    const item = allLeads.find(x => x.id === id);
-    if (item) Object.assign(item, changes);
-    updateStats();
-    renderLeads();
-  } catch (error) {
-    console.error(error);
-    alert("Unable to update lead. Check Firestore Security Rules.");
-  }
-}
-
-function statusOptions(current) {
-  const options = ["New","Contacted","Interested","Visit Scheduled","Joined","Follow Up","Not Interested","Closed"];
-  return options.map(x => `<option ${x === current ? "selected" : ""}>${x}</option>`).join("");
-}
-
-function escapeHtml(value) {
-  return String(value ?? "")
-    .replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;").replaceAll("'","&#039;");
+function openToolMessage(toolName){
+  const box = document.getElementById('toolMessage');
+  if(!box) return;
+  box.textContent = '🔧 ' + toolName + ' website ke next development phase mein add kiya jayega.';
 }
 </script>
+
 </body>
 </html>
