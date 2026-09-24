@@ -1397,7 +1397,7 @@
 
 
         <div class="enquiry-note">
-          We will contact you regarding your enquiry.
+          Your enquiry is saved securely for follow-up. We will contact you regarding your enquiry.
         </div>
 
 
@@ -2053,16 +2053,19 @@
 
 <script>
 
-function sendTradingEnquiry(event) {
+async function sendTradingEnquiry(event) {
 
   event.preventDefault();
+
+  const form = event.target;
+  const submitButton = form.querySelector(".enquiry-btn");
 
   const name = document.getElementById("traderName").value.trim();
   const mobile = document.getElementById("traderMobile").value.trim();
   const interest = document.getElementById("tradingInterest").value;
   const experience = document.getElementById("traderExperience").value;
-  const problem = document.getElementById("traderProblem")?.value || "Not provided";
-  const joiningPreference = document.getElementById("joiningPreference")?.value || "Not provided";
+  const problem = document.getElementById("traderProblem")?.value || "";
+  const joiningPreference = document.getElementById("joiningPreference")?.value || "";
   const message = document.getElementById("traderMessage").value.trim();
 
   if (!/^\d{10}$/.test(mobile)) {
@@ -2070,9 +2073,35 @@ function sendTradingEnquiry(event) {
     return;
   }
 
-  const whatsappNumber = "916350566010";
+  const leadData = {
+    name: name,
+    mobile: mobile,
+    interest: interest,
+    experience: experience,
+    problem: problem,
+    joiningPreference: joiningPreference,
+    message: message,
+    source: "Website Enquiry Form",
+    status: "New",
+    notes: "",
+    followUpDate: "",
+    createdAt: window.firebaseServerTimestamp()
+  };
 
-  const whatsappMessage =
+  try {
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Saving Enquiry...";
+
+    /* Save lead to Firestore */
+    await window.firebaseAddDoc(
+      window.firebaseLeadsRef,
+      leadData
+    );
+
+    const whatsappNumber = "916350566010";
+
+    const whatsappMessage =
 `*New Trading Enquiry*
 
 👤 Name: ${name}
@@ -2083,21 +2112,72 @@ function sendTradingEnquiry(event) {
 
 🎯 Experience: ${experience}
 
-⚠️ Main Problem: ${problem}
+⚠️ Main Problem: ${problem || "Not provided"}
 
-🗓️ Joining Preference: ${joiningPreference}
+🗓️ Joining Preference: ${joiningPreference || "Not provided"}
 
 💬 Message: ${message || "Not provided"}
 
 I would like to know more about the trading classes.`;
 
-  const whatsappURL =
-    "https://wa.me/" +
-    whatsappNumber +
-    "?text=" +
-    encodeURIComponent(whatsappMessage);
+    const whatsappURL =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(whatsappMessage);
 
-  window.open(whatsappURL, "_blank");
+    submitButton.textContent = "Opening WhatsApp...";
+
+    window.open(whatsappURL, "_blank");
+
+    submitButton.textContent = "✅ Enquiry Saved";
+
+    setTimeout(function(){
+      form.reset();
+      submitButton.disabled = false;
+      submitButton.textContent = "💬 Send Enquiry on WhatsApp";
+    }, 1800);
+
+  } catch (error) {
+
+    console.error("Lead save error:", error);
+
+    /* Even if Firestore is unavailable, don't block the WhatsApp enquiry. */
+    const whatsappNumber = "916350566010";
+
+    const whatsappMessage =
+`*New Trading Enquiry*
+
+👤 Name: ${name}
+
+📱 Mobile: ${mobile}
+
+📈 Interested In: ${interest}
+
+🎯 Experience: ${experience}
+
+⚠️ Main Problem: ${problem || "Not provided"}
+
+🗓️ Joining Preference: ${joiningPreference || "Not provided"}
+
+💬 Message: ${message || "Not provided"}
+
+I would like to know more about the trading classes.`;
+
+    const whatsappURL =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
+
+    submitButton.disabled = false;
+    submitButton.textContent = "💬 Send Enquiry on WhatsApp";
+
+    alert("WhatsApp enquiry opened. Lead database is temporarily unavailable.");
+  }
+
 }
 
 </script>
@@ -2192,6 +2272,18 @@ I would like to know more about the trading classes.`;
       db,
       "comments"
     );
+
+  /* Trading enquiry leads */
+  const leadsRef =
+    collection(
+      db,
+      "leads"
+    );
+
+  /* Make lead helpers available to the enquiry form */
+  window.firebaseLeadsRef = leadsRef;
+  window.firebaseAddDoc = addDoc;
+  window.firebaseServerTimestamp = serverTimestamp;
 
 
 
