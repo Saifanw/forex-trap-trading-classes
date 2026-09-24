@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading Classes Admin — Lead Dashboard</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.5}
+button,input,select,textarea{font:inherit}
+.login-page{min-height:100vh;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#0f172a,#1e3a5f)}
+.login-card{width:min(420px,100%);background:#fff;border-radius:18px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.22)}
+.login-card h1{font-size:24px;margin-bottom:5px}.login-card p{color:#64748b;font-size:13px;margin-bottom:20px}
+.field{margin-bottom:13px}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:5px;color:#334155}
+.field input{width:100%;padding:11px 12px;border:1px solid #cbd5e1;border-radius:9px;outline:none}
+.field input:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.primary-btn{width:100%;padding:12px;border:0;border-radius:9px;background:#2563eb;color:#fff;font-weight:800;cursor:pointer}
+.primary-btn:disabled{opacity:.65;cursor:not-allowed}.error{min-height:20px;margin-top:10px;text-align:center;color:#dc2626;font-size:12px;font-weight:700}
+.dashboard{display:none;min-height:100vh}.topbar{height:64px;background:#0f172a;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 22px;gap:15px}
+.brand strong{font-size:16px}.brand span{display:block;color:#94a3b8;font-size:10px}
+.logout{border:1px solid #475569;background:transparent;color:#fff;padding:7px 11px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:800}
+.container{max-width:1250px;margin:auto;padding:22px}.notice{margin-bottom:14px;padding:11px 13px;border-radius:10px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:11px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}.stat{background:#fff;border:1px solid #e2e8f0;border-radius:13px;padding:16px}
+.stat span{display:block;color:#64748b;font-size:11px;font-weight:700}.stat strong{display:block;font-size:24px;margin-top:3px}
+.toolbar{background:#fff;border:1px solid #e2e8f0;border-radius:13px;padding:14px;display:flex;gap:9px;flex-wrap:wrap;margin-bottom:13px}
+.toolbar input,.toolbar select{padding:9px 10px;border:1px solid #cbd5e1;border-radius:8px;min-width:160px}
+.refresh{padding:9px 12px;border:0;border-radius:8px;background:#2563eb;color:#fff;font-weight:800;cursor:pointer}
+.table-wrap{background:#fff;border:1px solid #e2e8f0;border-radius:13px;overflow:auto}
+table{width:100%;border-collapse:collapse;min-width:1050px}th,td{padding:12px;border-bottom:1px solid #eef2f7;text-align:left;vertical-align:top;font-size:12px}
+th{background:#f8fafc;color:#475569;font-size:10px;text-transform:uppercase;letter-spacing:.5px}
+td strong{font-size:12px}.muted{color:#64748b;font-size:10px}
+.status-select{padding:6px;border:1px solid #cbd5e1;border-radius:7px;font-size:11px}
+.notes{width:170px;padding:7px;border:1px solid #cbd5e1;border-radius:7px;font-size:11px}
+.save-note{border:0;background:#0f766e;color:#fff;border-radius:7px;padding:6px 8px;font-size:10px;font-weight:800;cursor:pointer;margin-top:5px}
+.empty{padding:35px;text-align:center;color:#64748b}
+@media(max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}.container{padding:14px}}
+</style>
+</head>
+<body>
+
+<div class="login-page" id="loginPage">
+  <div class="login-card">
+    <h1>🔐 Admin Login</h1>
+    <p>Forex Trap Trading Classes — Lead Management</p>
+    <div class="field"><label>Email</label><input id="email" type="email" placeholder="Admin email" autocomplete="username"></div>
+    <div class="field"><label>Password</label><input id="password" type="password" placeholder="Password" autocomplete="current-password"></div>
+    <button class="primary-btn" id="loginBtn">Login to Dashboard</button>
+    <div class="error" id="loginError"></div>
+  </div>
+</div>
+
+<div class="dashboard" id="dashboard">
+  <header class="topbar">
+    <div class="brand"><strong>📊 Trading Lead Dashboard</strong><span>Forex Trap Trading Classes • Jhotwara, Jaipur</span></div>
+    <button class="logout" id="logoutBtn">Logout</button>
+  </header>
+
+  <main class="container">
+    <div class="notice">🔒 Authenticated admin area. Firestore rules must restrict lead reads/updates to trusted admin accounts.</div>
+
+    <section class="stats">
+      <div class="stat"><span>Total Leads</span><strong id="totalCount">0</strong></div>
+      <div class="stat"><span>New</span><strong id="newCount">0</strong></div>
+      <div class="stat"><span>Contacted</span><strong id="contactedCount">0</strong></div>
+      <div class="stat"><span>Visit Scheduled</span><strong id="visitCount">0</strong></div>
+      <div class="stat"><span>Joined</span><strong id="joinedCount">0</strong></div>
+    </section>
+
+    <section class="toolbar">
+      <input id="searchBox" type="search" placeholder="Search name / mobile / interest...">
+      <select id="statusFilter">
+        <option value="">All Statuses</option>
+        <option>New</option><option>Contacted</option><option>Interested</option>
+        <option>Visit Scheduled</option><option>Joined</option><option>Follow Up</option>
+        <option>Not Interested</option><option>Closed</option>
+      </select>
+      <button class="refresh" id="refreshBtn">↻ Refresh Leads</button>
+    </section>
+
+    <section class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Lead</th><th>Interest / Experience</th><th>Problem</th>
+          <th>Joining</th><th>Message</th><th>Status</th><th>Notes / Follow-up</th>
+        </tr></thead>
+        <tbody id="leadBody"><tr><td colspan="7" class="empty">Login and load leads.</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut }
+  from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+import { getFirestore, collection, getDocs, updateDoc, doc }
+  from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+const firebaseConfig = {
+
+
+
+    apiKey:
+      "AIzaSyBeVwF0fk5bGPiJ0vm_MSEyz_RPm_sigEY",
+
+
+    authDomain:
+      "forex-trading-classes.firebaseapp.com",
+
+
+    projectId:
+      "forex-trading-classes",
+
+
+    storageBucket:
+      "forex-trading-classes.firebasestorage.app",
+
+
+    messagingSenderId:
+      "786712869626",
+
+
+    appId:
+      "1:786712869626:web:4e7877e96ea3667bf72743",
+
+
+    measurementId:
+      "G-ZSCH0E7R9H"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const leadsRef = collection(db, "leads");
+
+const loginPage = document.getElementById("loginPage");
+const dashboard = document.getElementById("dashboard");
+const loginBtn = document.getElementById("loginBtn");
+const loginError = document.getElementById("loginError");
+const leadBody = document.getElementById("leadBody");
+const searchBox = document.getElementById("searchBox");
+const statusFilter = document.getElementById("statusFilter");
+let allLeads = [];
+
+loginBtn.addEventListener("click", async () => {
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  if (!email || !password) { loginError.textContent = "Email and password required."; return; }
+
+  try {
+    loginBtn.disabled = true;
+    loginBtn.textContent = "Logging in...";
+    loginError.textContent = "";
+    await signInWithEmailAndPassword(auth, email, password);
+  } catch (error) {
+    console.error(error);
+    loginError.textContent = "Login failed. Check admin email/password and Firebase Authentication.";
+  } finally {
+    loginBtn.disabled = false;
+    loginBtn.textContent = "Login to Dashboard";
+  }
+});
+
+document.getElementById("password").addEventListener("keydown", e => {
+  if (e.key === "Enter") loginBtn.click();
+});
+document.getElementById("logoutBtn").addEventListener("click", () => signOut(auth));
+document.getElementById("refreshBtn").addEventListener("click", loadLeads);
+searchBox.addEventListener("input", renderLeads);
+statusFilter.addEventListener("change", renderLeads);
+
+onAuthStateChanged(auth, async user => {
+  if (user) {
+    loginPage.style.display = "none";
+    dashboard.style.display = "block";
+    await loadLeads();
+  } else {
+    dashboard.style.display = "none";
+    loginPage.style.display = "grid";
+  }
+});
+
+async function loadLeads() {
+  leadBody.innerHTML = '<tr><td colspan="7" class="empty">Loading leads...</td></tr>';
+  try {
+    const snapshot = await getDocs(leadsRef);
+    allLeads = [];
+    snapshot.forEach(item => allLeads.push({id:item.id, ...item.data()}));
+    allLeads.sort((a,b) => {
+      const ta = a.createdAt?.toMillis ? a.createdAt.toMillis() : 0;
+      const tb = b.createdAt?.toMillis ? b.createdAt.toMillis() : 0;
+      return tb - ta;
+    });
+    updateStats();
+    renderLeads();
+  } catch (error) {
+    console.error(error);
+    leadBody.innerHTML = '<tr><td colspan="7" class="empty">Unable to load leads. Check Firestore Security Rules.</td></tr>';
+  }
+}
+
+function updateStats() {
+  const count = status => allLeads.filter(x => (x.status || "New") === status).length;
+  document.getElementById("totalCount").textContent = allLeads.length;
+  document.getElementById("newCount").textContent = count("New");
+  document.getElementById("contactedCount").textContent = count("Contacted");
+  document.getElementById("visitCount").textContent = count("Visit Scheduled");
+  document.getElementById("joinedCount").textContent = count("Joined");
+}
+
+function renderLeads() {
+  const q = searchBox.value.trim().toLowerCase();
+  const status = statusFilter.value;
+
+  const filtered = allLeads.filter(lead => {
+    const haystack = [lead.name,lead.mobile,lead.interest,lead.experience,lead.problem,lead.message]
+      .join(" ").toLowerCase();
+    return (!q || haystack.includes(q)) && (!status || (lead.status || "New") === status);
+  });
+
+  if (!filtered.length) {
+    leadBody.innerHTML = '<tr><td colspan="7" class="empty">No matching leads.</td></tr>';
+    return;
+  }
+
+  leadBody.innerHTML = "";
+
+  filtered.forEach(lead => {
+    const tr = document.createElement("tr");
+    const created = lead.createdAt?.toDate ? lead.createdAt.toDate().toLocaleString("en-IN") : "Date unavailable";
+
+    tr.innerHTML = `
+      <td><strong>${escapeHtml(lead.name || "Unknown")}</strong><br>
+        <span class="muted">${escapeHtml(lead.mobile || "")}</span><br>
+        <span class="muted">${escapeHtml(created)}</span></td>
+      <td><strong>${escapeHtml(lead.interest || "—")}</strong><br>
+        <span class="muted">${escapeHtml(lead.experience || "—")}</span></td>
+      <td>${escapeHtml(lead.problem || "—")}</td>
+      <td>${escapeHtml(lead.joiningPreference || "—")}</td>
+      <td>${escapeHtml(lead.message || "—")}</td>
+      <td><select class="status-select" data-id="${lead.id}">${statusOptions(lead.status || "New")}</select></td>
+      <td>
+        <textarea class="notes" data-id="${lead.id}" placeholder="Admin notes...">${escapeHtml(lead.notes || "")}</textarea>
+        <input class="notes" data-followup="${lead.id}" type="date" value="${escapeHtml(lead.followUpDate || "")}">
+        <button class="save-note" data-save="${lead.id}">Save</button>
+      </td>`;
+    leadBody.appendChild(tr);
+  });
+
+  document.querySelectorAll(".status-select").forEach(select => {
+    select.addEventListener("change", async e => updateLead(e.target.dataset.id, {status:e.target.value}));
+  });
+
+  document.querySelectorAll("[data-save]").forEach(button => {
+    button.addEventListener("click", async () => {
+      const id = button.dataset.save;
+      const note = document.querySelector(`textarea[data-id="${id}"]`).value.trim();
+      const followUpDate = document.querySelector(`input[data-followup="${id}"]`).value;
+      await updateLead(id, {notes:note, followUpDate:followUpDate});
+    });
+  });
+}
+
+async function updateLead(id, changes) {
+  try {
+    await updateDoc(doc(db, "leads", id), changes);
+    const item = allLeads.find(x => x.id === id);
+    if (item) Object.assign(item, changes);
+    updateStats();
+    renderLeads();
+  } catch (error) {
+    console.error(error);
+    alert("Unable to update lead. Check Firestore Security Rules.");
+  }
+}
+
+function statusOptions(current) {
+  const options = ["New","Contacted","Interested","Visit Scheduled","Joined","Follow Up","Not Interested","Closed"];
+  return options.map(x => `<option ${x === current ? "selected" : ""}>${x}</option>`).join("");
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;").replaceAll("'","&#039;");
+}
+</script>
+</body>
+</html>
