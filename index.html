@@ -486,7 +486,7 @@
       }
 
     }
-/* ===== PREMIUM TOP HEADER + DYNAMIC HELP BAR ===== */
+/* ===== PREMIUM TOP HEADER + COMPACT DYNAMIC CONTACT LINE ===== */
 .premium-header{position:relative;min-height:150px;overflow:hidden;background:linear-gradient(135deg,#0d1727 0%,#15263f 58%,#102038 100%);color:#fff;padding:25px 20px 17px;text-align:center;border-bottom:1px solid #263952}
 .header-chart-bg{position:absolute;inset:0;opacity:1;pointer-events:none}
 .header-chart-bg svg{width:100%;height:100%;display:block}
@@ -496,16 +496,84 @@
 .premium-header p{font-size:13px;color:#d5dfeb}.premium-header p span{color:#6682a4;margin:0 4px}
 .market-motif{display:flex;justify-content:center;gap:12px;margin-top:13px;color:#8299b5;font-size:9px;font-weight:800;letter-spacing:.8px;opacity:.9}
 .market-motif .buy{color:#72d29a}.market-motif .sell{color:#ff7e8a}
-.top-help-bar{background:#fff;border-bottom:1px solid #dfe7f0;box-shadow:0 5px 15px rgba(15,35,60,.07);position:relative;z-index:5}
-.top-help-inner{max-width:1180px;min-height:66px;margin:auto;padding:9px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.top-help-message{display:flex;align-items:center;gap:11px;min-width:0}.top-help-dot{width:9px;height:9px;border-radius:50%;background:#f59e0b;box-shadow:0 0 0 5px #fff3d6;flex:0 0 9px}
-.top-help-copy{min-width:0}.top-help-copy strong{display:block;font-size:13px;color:#142b44;line-height:1.35;transition:opacity .2s}.top-help-copy span{display:block;color:#718096;font-size:10px;margin-top:2px;transition:opacity .2s}
-.top-help-btn{flex:0 0 auto;background:#16a34a;color:#fff;padding:10px 14px;border-radius:9px;font-size:11px;font-weight:850;box-shadow:0 7px 17px rgba(22,163,74,.15);white-space:nowrap}
-.top-help-btn:hover{background:#15803d}
-@media(max-width:600px){
- .premium-header{min-height:128px;padding:19px 12px 13px}.premium-header h1{font-size:24px}.premium-header p{font-size:10px}.header-eyebrow{font-size:7px;letter-spacing:1.4px}.market-motif{gap:7px;font-size:7px;overflow:hidden;white-space:nowrap;margin-top:10px}.market-motif span:nth-child(n+9){display:none}
- .top-help-inner{min-height:72px;padding:9px 11px;gap:8px}.top-help-copy strong{font-size:11px}.top-help-copy span{font-size:8px}.top-help-btn{font-size:9px;padding:8px 9px}
+
+/* Compact contact line — replaces the large advertising-style help bar */
+.top-help-bar{
+  background:#f8fafc;
+  border-bottom:1px solid #e2e8f0;
+  position:relative;
+  z-index:5;
 }
+.top-help-inner{
+  max-width:1180px;
+  min-height:34px;
+  margin:auto;
+  padding:5px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+}
+.top-help-message{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  min-width:0;
+  color:#64748b;
+  font-size:10px;
+  line-height:1.25;
+  text-align:center;
+}
+.top-help-dot{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#94a3b8;
+  flex:0 0 5px;
+}
+.top-help-copy{
+  min-width:0;
+}
+.top-help-copy strong{
+  display:inline;
+  font-size:10px;
+  color:#334e68;
+  line-height:1.25;
+  transition:opacity .2s;
+}
+.top-help-copy span{
+  display:none;
+}
+.top-help-btn{
+  flex:0 0 auto;
+  background:transparent;
+  color:#334e68;
+  padding:0;
+  border:0;
+  border-bottom:1px solid #cbd5e1;
+  border-radius:0;
+  font-size:10px;
+  font-weight:850;
+  box-shadow:none;
+  white-space:nowrap;
+  text-decoration:none;
+}
+.top-help-btn:hover{
+  background:transparent;
+  color:#1d4ed8;
+}
+@media(max-width:600px){
+  .premium-header{min-height:128px;padding:19px 12px 13px}
+  .premium-header h1{font-size:24px}
+  .premium-header p{font-size:10px}
+  .header-eyebrow{font-size:7px;letter-spacing:1.4px}
+  .market-motif{gap:7px;font-size:7px;overflow:hidden;white-space:nowrap;margin-top:10px}
+  .market-motif span:nth-child(n+9){display:none}
+  .top-help-inner{min-height:30px;padding:4px 8px;gap:5px}
+  .top-help-message,.top-help-copy strong,.top-help-btn{font-size:9px}
+}
+
 
 /* ==============================
    LIVE MARKET TICKER
@@ -1395,11 +1463,10 @@
     <div class="top-help-message">
       <span class="top-help-dot"></span>
       <div class="top-help-copy">
-        <strong id="lossHelpTitle">ट्रेडिंग में लगातार Loss हो रहा है?</strong>
-        <span id="lossHelpSub">अपनी Trading Mistakes और Risk Management को समझने के लिए बात करें।</span>
+        <strong id="lossHelpTitle">Trading सीखना हो या Loss Recovery और Trading Signals के बारे में बात करनी हो —</strong><span id="lossHelpSub"></span>
       </div>
     </div>
-    <a class="top-help-btn" href="https://wa.me/916350566010?text=Hello%2C%20mujhe%20trading%20loss%20aur%20risk%20management%20ke%20baare%20mein%20baat%20karni%20hai." target="_blank" rel="noopener noreferrer">💬 WhatsApp पर बात करें →</a>
+    <a class="top-help-btn" href="https://wa.me/916350566010?text=Hello%2C%20mujhe%20trading%20ke%20baare%20mein%20baat%20karni%20hai." target="_blank" rel="noopener noreferrer">Contact करें</a>
   </div>
 </div>
 
@@ -3096,16 +3163,20 @@ I would like to know more about the trading classes.`;
 (function(){
   const messages = [
     {
-      title: 'ट्रेडिंग में लगातार Loss हो रहा है?',
-      sub: 'अपनी Trading Mistakes और Risk Management को समझने के लिए बात करें।'
+      title: 'Trading सीखना हो या Loss Recovery और Trading Signals के बारे में बात करनी हो —',
+      sub: ''
     },
     {
-      title: 'बार-बार Stop Loss लग रहा है?',
-      sub: 'अपने Setup, Risk Management और Trading Behaviour पर बात करें।'
+      title: 'Jhotwara, Jaipur में Offline Trading Coaching के बारे में जानना हो —',
+      sub: ''
     },
     {
-      title: 'Trading में Discipline और Risk सुधारना चाहते हैं?',
-      sub: 'Practical Market Logic के साथ अपनी Trading Approach को समझें।'
+      title: 'Stock Market, Forex या Trap Trading सीखने के बारे में बात करनी हो —',
+      sub: ''
+    },
+    {
+      title: 'Trading Mistakes और Risk Management पर बात करनी हो —',
+      sub: ''
     }
   ];
   const title=document.getElementById('lossHelpTitle');
@@ -3114,13 +3185,11 @@ I would like to know more about the trading classes.`;
   let i=0;
   setInterval(function(){
     title.style.opacity='0';
-    sub.style.opacity='0';
     setTimeout(function(){
       i=(i+1)%messages.length;
       title.textContent=messages[i].title;
       sub.textContent=messages[i].sub;
       title.style.opacity='1';
-      sub.style.opacity='1';
     },220);
   },4200);
 })();
