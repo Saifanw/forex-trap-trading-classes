@@ -1702,6 +1702,36 @@
   }
 }
 
+
+/* ===== TELEGRAM — COMPACT TOP NAV BUTTON ===== */
+.top-telegram-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:25px;
+  padding:4px 11px;
+  border:1px solid #cbd5e1;
+  border-radius:7px;
+  background:#ffffff;
+  color:#334155;
+  text-decoration:none;
+  font-size:10px;
+  font-weight:850;
+  white-space:nowrap;
+  box-shadow:0 2px 6px rgba(15,23,42,.05);
+}
+.top-telegram-btn:hover{
+  background:#f1f5f9;
+  color:#1d4ed8;
+}
+@media(max-width:600px){
+  .top-telegram-btn{
+    min-height:24px;
+    padding:4px 8px;
+    font-size:9px;
+  }
+}
+
 </style>
 
 </head>
@@ -1734,6 +1764,13 @@
 <!-- ===== TRADING NOTES DROPDOWN ===== -->
 <div class="notes-menu-wrap front-nav-strip" aria-label="Quick Navigation">
   <a class="top-enquiry-btn" href="#enquiryDialog" onclick="openEnquiryDialog(event)">📩 Enquiry</a>
+
+  <a
+    class="top-telegram-btn"
+    href="https://t.me/+sg1LNTAVSCQ1NGRl"
+    target="_blank"
+    rel="noopener noreferrer"
+  >✈️ Join Telegram</a>
 
   <details class="notes-menu">
     <summary>📚 Trading Notes <span>⌄</span></summary>
