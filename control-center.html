@@ -27,7 +27,7 @@
 <script type="module">
 import{initializeApp}from"https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 import{getAuth,GoogleAuthProvider,signInWithPopup,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-const cfg={apiKey:"AIzaSyBeVwF0fk5bGPiJ0vm_MSEyz_RPm_sigEY",authDomain:"forex-trading-classes.firebaseapp.com",projectId:"forex-trading-classes",storageBucket:"forex-trading-classes.firebasestorage.app",messagingSenderId:"786712869626",appId:"1:786712869626:web:4e7877e96ea3667bf72743",measurementId:"G-ZSCH0E7R9H"};
+const cfg={apiKey:"AIzaSyBeVwF0fk5bGPiJ0vm_MSeyz_RPm_sigEY",authDomain:"forex-trading-classes.firebaseapp.com",projectId:"forex-trading-classes",storageBucket:"forex-trading-classes.firebasestorage.app",messagingSenderId:"786712869626",appId:"1:786712869626:web:4e7877e96ea3667bf72743",measurementId:"G-ZSCH0E7R9H"};
 const ADMIN="saif.anwar1618@gmail.com",auth=getAuth(initializeApp(cfg)),provider=new GoogleAuthProvider();
 const login=document.getElementById("loginView"),app=document.getElementById("app"),err=document.getElementById("loginError");
 document.getElementById("loginBtn").onclick=async()=>{try{err.textContent="";const r=await signInWithPopup(auth,provider);if((r.user.email||"").toLowerCase()!==ADMIN.toLowerCase()){await signOut(auth);err.textContent="Access denied. Use the authorized admin Google account.";}}catch(e){console.error(e);err.textContent="Login failed. Enable Google sign-in in Firebase and authorize your GitHub Pages domain."}};
