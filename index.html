@@ -1457,6 +1457,251 @@
   }
 }
 
+
+/* ===== FRONT PAGE REFERRAL + COMPACT ENQUIRY ===== */
+.front-nav-strip{
+  justify-content:space-between !important;
+  gap:10px !important;
+}
+.top-enquiry-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:25px;
+  padding:4px 11px;
+  border-radius:7px;
+  background:#334e68;
+  color:#fff;
+  text-decoration:none;
+  font-size:10px;
+  font-weight:850;
+  box-shadow:0 2px 6px rgba(15,23,42,.08);
+}
+.top-enquiry-btn:hover{background:#1d4ed8}
+.front-nav-strip .notes-menu{margin-left:auto}
+.front-nav-strip .notes-menu>summary{
+  min-height:25px;
+  padding:4px 12px !important;
+  font-size:10px !important;
+}
+
+.trading-referral-box{
+  background:linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);
+  border:1px solid #dbe5f0;
+  border-radius:16px;
+  padding:25px;
+  box-shadow:0 12px 35px rgba(15,23,42,.10);
+  text-align:left;
+}
+.referral-kicker{
+  color:#2563eb;
+  font-size:9px;
+  font-weight:850;
+  letter-spacing:1.2px;
+  margin-bottom:6px;
+}
+.trading-referral-box h2{
+  margin:0 0 8px;
+  color:#111827;
+  font-size:25px;
+  line-height:1.2;
+  text-align:left;
+}
+.referral-lead{
+  margin:0 0 15px;
+  color:#64748b;
+  font-size:14px;
+  line-height:1.55;
+}
+.referral-features{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:17px;
+}
+.referral-features span{
+  padding:8px 9px;
+  border:1px solid #e2e8f0;
+  border-radius:8px;
+  background:#fff;
+  color:#334155;
+  font-size:11px;
+  font-weight:750;
+}
+.referral-main-btn{
+  display:block;
+  text-align:center;
+  text-decoration:none;
+  background:#2563eb;
+  color:#fff;
+  padding:13px 15px;
+  border-radius:9px;
+  font-size:14px;
+  font-weight:850;
+  box-shadow:0 5px 14px rgba(37,99,235,.16);
+}
+.referral-main-btn:hover{background:#1d4ed8}
+.referral-disclosure{
+  margin-top:11px;
+  color:#94a3b8;
+  font-size:10px;
+  line-height:1.45;
+}
+.referral-details-link{
+  display:inline-block;
+  margin-top:8px;
+  color:#475569;
+  font-size:10px;
+  font-weight:800;
+  text-decoration:none;
+}
+.referral-details-link:hover{color:#1d4ed8}
+
+.enquiry-dialog{
+  width:min(94vw,480px);
+  max-height:92vh;
+  padding:0;
+  border:0;
+  border-radius:16px;
+  background:transparent;
+  box-shadow:0 25px 70px rgba(15,23,42,.28);
+}
+.enquiry-dialog::backdrop{background:rgba(15,23,42,.58)}
+.enquiry-modal-card{
+  position:relative;
+  max-height:92vh;
+  overflow:auto;
+  background:#fff;
+  border-radius:16px;
+}
+.enquiry-modal-card .trading-enquiry-box{
+  box-shadow:none;
+  border-radius:16px;
+  padding:24px;
+}
+.enquiry-close{
+  position:absolute;
+  top:9px;
+  right:11px;
+  z-index:3;
+  width:30px;
+  height:30px;
+  border:1px solid #e2e8f0;
+  border-radius:50%;
+  background:#fff;
+  color:#475569;
+  font-size:21px;
+  line-height:1;
+  cursor:pointer;
+}
+.enquiry-close:hover{background:#f1f5f9}
+
+@media(max-width:850px){
+  .trading-referral-box{
+    max-width:430px;
+    width:100%;
+    margin:auto;
+  }
+}
+@media(max-width:600px){
+  .front-nav-strip{
+    padding-left:12px !important;
+    padding-right:12px !important;
+  }
+  .top-enquiry-btn{
+    font-size:9px;
+    padding:4px 9px;
+  }
+  .front-nav-strip .notes-menu>summary{
+    font-size:9px !important;
+    padding:4px 9px !important;
+  }
+  .trading-referral-box{padding:20px}
+  .trading-referral-box h2{font-size:22px}
+  .referral-lead{font-size:13px}
+}
+
+
+/* ===== ELEFIN FOREX REFERRAL CARD ===== */
+.elefin-referral-box{
+  border-color:#d9e1ea;
+}
+.elefin-referral-box .referral-kicker{
+  color:#b45309;
+}
+.elefin-main-btn{
+  background:#172554;
+}
+.elefin-main-btn:hover{
+  background:#1e3a8a;
+}
+
+
+/* ===== TWO BROKER OPTIONS — SIDE BY SIDE ===== */
+.two-broker-wrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  width:100%;
+}
+.two-broker-wrap .trading-referral-box{
+  padding:18px;
+  border-radius:14px;
+}
+.two-broker-wrap .trading-referral-box h2{
+  font-size:20px;
+}
+.two-broker-wrap .referral-lead{
+  font-size:12px;
+  line-height:1.5;
+}
+.two-broker-wrap .referral-features{
+  gap:6px;
+  margin-bottom:12px;
+}
+.two-broker-wrap .referral-features span{
+  font-size:10px;
+  padding:7px 6px;
+}
+.two-broker-wrap .referral-main-btn{
+  padding:11px 9px;
+  font-size:12px;
+}
+.two-broker-wrap .referral-disclosure{
+  font-size:9px;
+  margin-top:8px;
+}
+.elefin-referral-box{
+  border-color:#d9e1ea;
+}
+.elefin-referral-box .referral-kicker{
+  color:#b45309;
+}
+.elefin-main-btn{
+  background:#172554;
+}
+.elefin-main-btn:hover{
+  background:#1e3a8a;
+}
+.dhan-referral-box{
+  border-color:#dbeafe;
+}
+.dhan-referral-box .referral-kicker{
+  color:#2563eb;
+}
+.dhan-main-btn{
+  background:#2563eb;
+}
+.dhan-main-btn:hover{
+  background:#1d4ed8;
+}
+
+@media(max-width:850px){
+  .two-broker-wrap{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 
 </head>
@@ -1487,7 +1732,9 @@
 </header>
 
 <!-- ===== TRADING NOTES DROPDOWN ===== -->
-<div class="notes-menu-wrap" aria-label="Trading Notes Navigation">
+<div class="notes-menu-wrap front-nav-strip" aria-label="Quick Navigation">
+  <a class="top-enquiry-btn" href="#enquiryDialog" onclick="openEnquiryDialog(event)">📩 Enquiry</a>
+
   <details class="notes-menu">
     <summary>📚 Trading Notes <span>⌄</span></summary>
 
@@ -1663,30 +1910,99 @@
 
 
 
-    <!-- RIGHT SIDE ENQUIRY -->
+    <!-- RIGHT SIDE — TWO TRADING PLATFORM OPTIONS -->
+
+    <div class="two-broker-wrap">
+
+      <!-- ELEFIN -->
+      <div class="trading-referral-box elefin-referral-box">
+
+        <div class="referral-kicker">FOREX • GOLD • BTC</div>
+
+        <h2>⭐ Best Forex Broker — Elefin</h2>
+
+        <p class="referral-lead">
+          Forex, Gold/XAUUSD, Bitcoin और global CFD markets के लिए Elefin platform option देखें.
+        </p>
+
+        <div class="referral-features">
+          <span>💱 Forex</span>
+          <span>🥇 Gold / XAUUSD</span>
+          <span>₿ Bitcoin</span>
+          <span>📊 Global Markets</span>
+        </div>
+
+        <a
+          class="referral-main-btn elefin-main-btn"
+          href="https://my.elefin.com/r/ELEFIN-REF-MGKHFQ"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open Forex Account →
+        </a>
+
+        <div class="referral-disclosure">
+          Referral link: eligible referred clients may generate partner/IB commission. CFD/Forex trading involves substantial risk.
+        </div>
+
+      </div>
+
+      <!-- DHAN -->
+      <div class="trading-referral-box dhan-referral-box">
+
+        <div class="referral-kicker">INDIAN MARKET</div>
+
+        <h2>📈 Dhan — Indian Market</h2>
+
+        <p class="referral-lead">
+          Indian Stocks, Futures &amp; Options, Commodity और Currency markets के लिए Dhan account option देखें.
+        </p>
+
+        <div class="referral-features">
+          <span>🇮🇳 Stocks</span>
+          <span>⚡ F&amp;O</span>
+          <span>🥇 Commodity</span>
+          <span>💱 Currency</span>
+        </div>
+
+        <a
+          class="referral-main-btn dhan-main-btn"
+          href="https://join.dhan.co/?invite=KNPWN05870"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open Dhan Account →
+        </a>
+
+        <div class="referral-disclosure">
+          Referral link: eligible account opening/rewards may benefit the referrer. Trading involves market risk.
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+<!-- =========================
+     ENQUIRY MODAL
+     ========================= -->
+<dialog id="enquiryDialog" class="enquiry-dialog">
+  <div class="enquiry-modal-card">
+    <button class="enquiry-close" type="button" onclick="closeEnquiryDialog()" aria-label="Close">×</button>
 
     <div class="trading-enquiry-box">
-
-      <h2>
-        📩 Start Your Trading Journey
-      </h2>
+      <h2>📩 Start Your Trading Journey</h2>
 
       <p class="enquiry-subtitle">
         Tell us what you want to learn and we'll contact you.
       </p>
 
-
       <form onsubmit="sendTradingEnquiry(event)">
-
-
-        <input
-          type="text"
-          id="traderName"
-          placeholder="Your Name"
-          maxlength="60"
-          required
-        >
-
+        <input type="text" id="traderName" placeholder="Your Name" maxlength="60" required>
 
         <input
           type="tel"
@@ -1698,64 +2014,23 @@
           required
         >
 
-
-        <select
-          id="tradingInterest"
-          required
-        >
-
-          <option value="">
-            I want to learn...
-          </option>
-
-          <option>
-            Forex Trading
-          </option>
-
-          <option>
-            Gold / XAUUSD
-          </option>
-
-          <option>
-            Nifty 50
-          </option>
-
-          <option>
-            Bank Nifty
-          </option>
-
-          <option>
-            Intraday Trading
-          </option>
-
-          <option>
-            Trap Trading
-          </option>
-
-          <option>
-            Price Action
-          </option>
-
-          <option>
-            Technical Analysis
-          </option>
-
+        <select id="tradingInterest" required>
+          <option value="">I want to learn...</option>
+          <option>Forex Trading</option>
+          <option>Gold / XAUUSD</option>
+          <option>Nifty 50</option>
+          <option>Bank Nifty</option>
+          <option>Intraday Trading</option>
+          <option>Trap Trading</option>
+          <option>Price Action</option>
+          <option>Technical Analysis</option>
         </select>
 
-
-        <select
-          id="traderExperience"
-          required
-        >
-
-          <option value="">
-            Trading Experience
-          </option>
-
+        <select id="traderExperience" required>
+          <option value="">Trading Experience</option>
           <option>Beginner</option>
           <option>Intermediate</option>
           <option>Advanced</option>
-
         </select>
 
         <select id="traderProblem">
@@ -1784,27 +2059,18 @@
           rows="3"
         ></textarea>
 
-
-        <button
-          type="submit"
-          class="enquiry-btn"
-        >
+        <button type="submit" class="enquiry-btn">
           💬 Send Enquiry on WhatsApp
         </button>
-
 
         <div class="enquiry-note">
           Your enquiry is saved securely for follow-up. We will contact you regarding your enquiry.
         </div>
-
-
       </form>
-
     </div>
-
   </div>
+</dialog>
 
-</div>
 
 
 
@@ -3282,6 +3548,35 @@ function openToolMessage(toolName){
   if(!box) return;
   box.textContent = '🔧 ' + toolName + ' website ke next development phase mein add kiya jayega.';
 }
+</script>
+
+
+<script>
+function openEnquiryDialog(event){
+  if(event) event.preventDefault();
+  const dialog = document.getElementById('enquiryDialog');
+  if(dialog && typeof dialog.showModal === 'function'){
+    dialog.showModal();
+  }else if(dialog){
+    dialog.setAttribute('open','');
+  }
+}
+
+function closeEnquiryDialog(){
+  const dialog = document.getElementById('enquiryDialog');
+  if(dialog && typeof dialog.close === 'function'){
+    dialog.close();
+  }else if(dialog){
+    dialog.removeAttribute('open');
+  }
+}
+
+document.addEventListener('click', function(event){
+  const dialog = document.getElementById('enquiryDialog');
+  if(dialog && event.target === dialog){
+    closeEnquiryDialog();
+  }
+});
 </script>
 
 </body>
