@@ -1251,15 +1251,89 @@
 @media(max-width:700px){.youtube-learning{padding:0 14px}.youtube-learning-head h2{font-size:22px}}
 
 
-/* ===== COMPACT TRADING NOTES MENU ===== */
-.notes-menu-wrap{max-width:1100px;margin:10px auto 0;padding:0 20px}
-.notes-menu{display:inline-block;position:relative;z-index:20}
-.notes-menu>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border:1px solid #cbd5e1;border-radius:7px;background:#fff;color:#334e68;font-size:11px;font-weight:800}
+/* ===== TRADING NOTES DROPDOWN — FRONT PAGE ===== */
+.notes-menu-wrap{
+  max-width:1100px;
+  margin:9px auto 0;
+  padding:0 20px;
+  position:relative;
+  z-index:30;
+}
+.notes-menu{
+  display:inline-block;
+  position:relative;
+}
+.notes-menu>summary{
+  list-style:none;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 10px;
+  border:1px solid #cbd5e1;
+  border-radius:8px;
+  background:#fff;
+  color:#334e68;
+  font-size:11px;
+  font-weight:800;
+  box-shadow:0 2px 7px rgba(15,23,42,.05);
+}
 .notes-menu>summary::-webkit-details-marker{display:none}
-.notes-menu[open]>summary{background:#f8fafc}
-.notes-menu-list{position:absolute;top:calc(100% + 5px);left:0;min-width:175px;background:#fff;border:1px solid #dbe3ec;border-radius:9px;box-shadow:0 10px 25px rgba(15,23,42,.12);padding:5px}
-.notes-menu-list a{display:block;padding:8px 9px;border-radius:6px;text-decoration:none;color:#334155;font-size:12px}
-.notes-menu-list a:hover{background:#f1f5f9;color:#172033}
+.notes-menu>summary:hover,
+.notes-menu[open]>summary{
+  background:#f8fafc;
+  border-color:#94a3b8;
+}
+.notes-menu-list{
+  position:absolute;
+  top:calc(100% + 6px);
+  left:0;
+  min-width:215px;
+  padding:7px;
+  background:#fff;
+  border:1px solid #dbe3ec;
+  border-radius:10px;
+  box-shadow:0 12px 28px rgba(15,23,42,.14);
+}
+.notes-menu-list a,
+.notes-menu-disabled{
+  display:block;
+  padding:8px 9px;
+  border-radius:7px;
+  text-decoration:none;
+  color:#334155;
+  font-size:12px;
+  font-weight:700;
+}
+.notes-menu-list a:hover{
+  background:#f1f5f9;
+  color:#172033;
+}
+.notes-menu-heading{
+  padding:4px 9px 5px;
+  color:#94a3b8;
+  font-size:8px;
+  font-weight:850;
+  letter-spacing:.8px;
+}
+.notes-menu-disabled{
+  color:#94a3b8;
+  cursor:default;
+}
+.notes-menu-divider{
+  height:1px;
+  background:#eef2f7;
+  margin:5px 2px;
+}
+@media(max-width:600px){
+  .notes-menu-wrap{
+    padding:0 12px;
+    margin-top:7px;
+  }
+  .notes-menu-list{
+    min-width:205px;
+  }
+}
 
 </style>
 
@@ -1289,6 +1363,31 @@
   </div>
 <div style="margin-top:10px;font-size:12px;color:#bfdbfe;">Practical Learning • Jhotwara, Jaipur • Stock Market • Forex • Gold</div>
 </header>
+
+<!-- ===== TRADING NOTES DROPDOWN ===== -->
+<div class="notes-menu-wrap" aria-label="Trading Notes Navigation">
+  <details class="notes-menu">
+    <summary>📚 Trading Notes <span>⌄</span></summary>
+
+    <div class="notes-menu-list">
+      <div class="notes-menu-heading">AVAILABLE NOTES</div>
+
+      <a href="psychology.html">
+        🧠 Psychology
+      </a>
+
+      <div class="notes-menu-divider"></div>
+      <div class="notes-menu-heading">COMING SOON</div>
+
+      <span class="notes-menu-disabled">💯 Perfect Setup</span>
+      <span class="notes-menu-disabled">🎯 Market Logic</span>
+      <span class="notes-menu-disabled">🛡️ Risk Management</span>
+      <span class="notes-menu-disabled">💧 Liquidity</span>
+      <span class="notes-menu-disabled">📈 Breakout & Retest</span>
+    </div>
+  </details>
+</div>
+
 
 <!-- TOP DYNAMIC TRADING HELP BAR -->
 <div class="top-help-bar">
