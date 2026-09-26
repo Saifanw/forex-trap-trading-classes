@@ -47,6 +47,11 @@ button,.btn{padding:9px 13px;font-size:14px}
 </div>
 <div id="previewLessonTitle" style="font-size:20px;font-weight:800;margin:10px 0"></div>
 <div id="previewNotes" style="white-space:pre-wrap;overflow-wrap:anywhere;background:white;border:1px solid #dbeafe;border-radius:10px;padding:14px;min-height:40px"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid #dbeafe">
+  <button type="button" id="confirmSaveFromPreview" class="green" style="font-size:15px;padding:12px 18px">✓ Confirm &amp; Save Lesson</button>
+  <span class="muted" style="font-size:13px">Video and notes above look correct? Click to save this lesson to your selected course.</span>
+</div>
+
 <p style="font-size:13px;color:#64748b">This is an admin-side preview only. The video embed can fail if the video is Private, deleted, restricted, or embedding is disabled. For a paid lesson, do not publish its direct YouTube URL in public lesson data.</p>
 </div>
 
@@ -102,6 +107,7 @@ function updateLessonPreview(){
   }
 }
 ['lessonVideo','lessonTitle','lessonNotes'].forEach(id=>$(id).addEventListener('input',updateLessonPreview));
+$('confirmSaveFromPreview').addEventListener('click',()=>{$('saveLesson').click()});
 
 $('saveLesson').onclick=async()=>{
   const cid=val('existingCourses')||val('courseId');
