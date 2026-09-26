@@ -36,26 +36,17 @@ header p{font-size:14px}
 #lessonPreviewPanel h2{font-size:17px}
 button,.btn{padding:9px 13px;font-size:14px}
 @media(min-width:800px){#lessonEditorGrid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}#lessonEditorGrid .wide{grid-column:1/-1}}
+</style><style>
+#lessonEditorGrid{display:grid;grid-template-columns:1fr;gap:0}
+#lessonEditorGrid .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+#lessonEditorGrid textarea{min-height:90px}
+#deleteCourse{background:#b91c1c;color:#fff}
+@media(min-width:850px){
+ #lessonEditorGrid .field:has(#lessonVideo),#lessonEditorGrid .field:has(#lessonNotes){max-width:760px}
+}
 </style></head><body><header><h1>🛠 Course Admin Panel</h1><p>Manage courses, lessons and student access</p></header><main class="wrap"><div class="bar"><a class="btn secondary" href="courses.html">← Student Catalog</a><div id="authArea"><button id="loginBtn">Admin Google Login</button></div></div><div id="status" class="notice">Sign in using the admin Google account.</div><div id="adminApp" class="hidden">
-<div class="panel"><h2>Create / Update Course</h2><div class="row"><div class="field"><label>Course ID (simple unique ID)</label><input id="courseId" placeholder="trap-trading-basics"></div><div class="field"><label>Course title</label><input id="courseTitle" placeholder="Trap Trading Masterclass"></div><div class="field"><label>Price in INR (0 = free)</label><input id="coursePrice" type="number" min="0" value="0"></div></div><div class="field"><label>Description</label><textarea id="courseDesc"></textarea></div><label><input type="checkbox" id="coursePublished" checked> Published / visible to students</label><p><button id="saveCourse">Save course</button> <button id="clearCourse" class="secondary">Clear</button></p><div id="coursePicker" class="field"><label>Existing courses</label><select id="existingCourses"><option value="">Choose course</option></select></div></div>
-<div class="panel" style="margin-top:14px"><h2>Add Video / Notes Lesson</h2><p class="muted" style="margin:0 0 12px;font-size:13px">Select the course, add a title and choose either a video, notes, or both. Preview before saving.</p><div id="lessonEditorGrid"><div class="row"><div class="field"><label>Lesson ID</label><input id="lessonId" placeholder="lesson-01"></div><div class="field"><label>Lesson title</label><input id="lessonTitle"></div><div class="field"><label>Display order</label><input id="lessonOrder" type="number" value="1"></div></div><div class="field"><label>YouTube video URL (unlisted links can be shared)</label><input id="lessonVideo" type="url" placeholder="https://www.youtube.com/watch?v=..."></div><div class="field"><label>Lesson notes / text</label><textarea id="lessonNotes"></textarea></div><div class="field"><label>Lesson fee (INR)</label><select id="lessonPrice"><option value="0">Free — ₹0</option><option value="500" selected>₹500</option><option value="900">₹900</option><option value="1500">₹1,500</option><option value="custom">Custom amount</option></select></div><div class="field hidden" id="customPriceWrap"><label>Custom fee (INR)</label><input id="lessonCustomPrice" type="number" min="1" step="1" placeholder="Enter amount"></div><div class="field"><label>Optional resource URL (only use files hosted with appropriate access controls)</label><input id="lessonResource" type="url"></div><p class="wide"><button id="saveLesson">Save lesson</button> <a class="btn secondary" id="openCatalogAfterSave" href="courses.html" target="_blank" rel="noopener">Open Courses page</a></p></div></div><div class="panel" id="lessonPreviewPanel" style="margin-top:18px;border:2px solid #93c5fd;background:#f8fbff">
-<h2>🔎 Preview Before Saving / Publishing</h2>
-<p class="muted">Paste the YouTube URL and notes above. Preview here to confirm the correct video, title and notes before saving.</p>
-<div id="previewStatus" class="notice">Enter a YouTube link or notes to preview them here.</div>
-<div id="previewVideoWrap" class="hidden" style="max-width:640px;margin:12px 0">
-<div style="position:relative;width:100%;aspect-ratio:16/9;background:#0f172a;border-radius:12px;overflow:hidden"><iframe id="previewVideo" title="Admin video preview" style="width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-</div>
-<div id="previewLessonTitle" style="font-size:20px;font-weight:800;margin:10px 0"></div>
-<div id="previewNotes" style="white-space:pre-wrap;overflow-wrap:anywhere;background:white;border:1px solid #dbeafe;border-radius:10px;padding:14px;min-height:40px"></div>
-<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid #dbeafe">
-  <button type="button" id="confirmSaveFromPreview" class="green" style="font-size:15px;padding:12px 18px">✓ Confirm &amp; Save Lesson</button>
-  <span class="muted" style="font-size:13px">Video and notes above look correct? Click to save this lesson to your selected course.</span>
-</div>
-
-<p style="font-size:13px;color:#64748b">This is an admin-side preview only. The video embed can fail if the video is Private, deleted, restricted, or embedding is disabled. For a paid lesson, do not publish its direct YouTube URL in public lesson data.</p>
-</div>
-
-<div class="panel" style="margin-top:18px"><h2>Manual Payment Verification</h2><div class="notice">Student UPI payment ko apne bank/UPI app mein verify karein. Payment reference/transaction ID ko student ke Telegram message se match karne ke baad neeche access grant karein. UPI ID shown to students: <b>6350566010@ybl</b>. Telegram: <a href="https://t.me/t3straptrader" target="_blank" rel="noopener">@t3straptrader</a>.</div></div><div class="panel" style="margin-top:18px"><h2>Grant / Revoke Course Access</h2><div class="row"><div class="field"><label>Student Google email</label><input id="studentEmail" type="email" placeholder="student@gmail.com"></div><div class="field"><label>Course</label><select id="accessCourse"><option value="">Choose course</option></select></div></div><p><button id="grantAccess" class="green">Grant Access</button> <button id="revokeAccess" class="red">Revoke Access</button></p><div class="notice">Student must sign in once on courses.html with the same Google email so their account profile exists. Then grant access here.</div></div>
+<div class="panel"><h2>Create / Update Course</h2><div class="row"><div class="field"><label>Course ID (simple unique ID)</label><input id="courseId" placeholder="trap-trading-basics"></div><div class="field"><label>Course title</label><input id="courseTitle" placeholder="Trap Trading Masterclass"></div><div class="field"><label>Price in INR (0 = free)</label><input id="coursePrice" type="number" min="0" value="0"></div></div><div class="field"><label>Description</label><textarea id="courseDesc"></textarea></div><label><input type="checkbox" id="coursePublished" checked> Published / visible to students</label><p><button id="saveCourse">Save course</button> <button id="clearCourse" class="secondary">Clear</button> <button id="deleteCourse" class="red" type="button">Delete selected course</button></p><div id="coursePicker" class="field"><label>Existing courses</label><select id="existingCourses"><option value="">Choose course</option></select></div></div>
+<div class="panel" style="margin-top:14px"><h2>Add Video or Notes</h2><p class="muted" style="margin:0 0 12px;font-size:13px">Select the course, add a title and choose either a video, notes, or both. Preview before saving.</p><div id="lessonEditorGrid"><div class="row"><div class="field"><label>Lesson ID</label><input id="lessonId" placeholder="lesson-01"></div><div class="field"><label>Lesson title</label><input id="lessonTitle"></div><div class="field"><label>Display order</label><input id="lessonOrder" type="number" value="1"></div></div><div class="field"><label>YouTube video URL (unlisted links can be shared)</label><input id="lessonVideo" type="url" placeholder="https://www.youtube.com/watch?v=..."></div><div class="field"><label>Lesson notes / text</label><textarea id="lessonNotes"></textarea></div><div class="field"><label>Lesson fee (INR)</label><select id="lessonPrice"><option value="0">Free — ₹0</option><option value="500" selected>₹500</option><option value="900">₹900</option><option value="1500">₹1,500</option><option value="custom">Custom amount</option></select></div><div class="field hidden" id="customPriceWrap"><label>Custom fee (INR)</label><input id="lessonCustomPrice" type="number" min="1" step="1" placeholder="Enter amount"></div><div class="field"><label>Optional resource URL (only use files hosted with appropriate access controls)</label><input id="lessonResource" type="url"></div><p class="wide"><button id="saveLesson">Save lesson</button> <a class="btn secondary" id="openCatalogAfterSave" href="courses.html" target="_blank" rel="noopener">Open Courses page</a></p></div></div><div class="panel" style="margin-top:18px"><h2>Manual Payment Verification</h2><div class="notice">Student UPI payment ko apne bank/UPI app mein verify karein. Payment reference/transaction ID ko student ke Telegram message se match karne ke baad neeche access grant karein. UPI ID shown to students: <b>6350566010@ybl</b>. Telegram: <a href="https://t.me/t3straptrader" target="_blank" rel="noopener">@t3straptrader</a>.</div></div><div class="panel" style="margin-top:18px"><h2>Grant / Revoke Course Access</h2><div class="row"><div class="field"><label>Student Google email</label><input id="studentEmail" type="email" placeholder="student@gmail.com"></div><div class="field"><label>Course</label><select id="accessCourse"><option value="">Choose course</option></select></div></div><p><button id="grantAccess" class="green">Grant Access</button> <button id="revokeAccess" class="red">Revoke Access</button></p><div class="notice">Student must sign in once on courses.html with the same Google email so their account profile exists. Then grant access here.</div></div>
 </div></main><div class="footer">Admin page is not itself the security boundary. Firestore Rules enforce access; keep this page and your Google account secure.</div>
 <script type="module">
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js';import {getAuth,GoogleAuthProvider,signInWithPopup,onAuthStateChanged,signOut} from 'https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js';import {getFirestore,collection,doc,setDoc,getDoc,getDocs,query,where,deleteDoc,serverTimestamp} from 'https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js';
@@ -72,6 +63,25 @@ const ADMIN='saif.anwar1618@gmail.com';const app=initializeApp(firebaseConfig),a
 $('loginBtn').onclick=async()=>{try{await signInWithPopup(auth,provider)}catch(e){$('status').textContent=e.message}};
 onAuthStateChanged(auth,async user=>{me=user;if(!user){$('status').textContent='Please sign in with admin Google account.';return}if(user.email!==ADMIN||!user.emailVerified){$('status').innerHTML='Access denied. Admin Google account required.';await signOut(auth);return}$('status').textContent='Admin verified: '+user.email;$('adminApp').classList.remove('hidden');$('authArea').innerHTML='<button class="secondary" id="logoutBtn">Sign out</button>';$('logoutBtn').onclick=()=>signOut(auth);await refreshCourses()});
 function val(id){return $(id).value.trim()}function say(t){$('status').textContent=t}
+
+$('deleteCourse').onclick=async()=>{
+  const cid=val('existingCourses');
+  if(!cid){say('Select a course to delete.');return}
+  const course=courses.find(c=>c.id===cid);
+  const title=course?.title||cid;
+  if(!confirm('Delete "'+title+'" and all its lessons? This cannot be undone.'))return;
+  const btn=$('deleteCourse');btn.disabled=true;btn.textContent='Deleting…';
+  try{
+    const lessonSnap=await getDocs(collection(db,'courses',cid,'lessons'));
+    for(const lesson of lessonSnap.docs){await deleteDoc(doc(db,'courses',cid,'lessons',lesson.id))}
+    await deleteDoc(doc(db,'courses',cid));
+    say('Deleted course "'+title+'" and '+lessonSnap.size+' lesson(s).');
+    $('courseId').value='';$('courseTitle').value='';$('coursePrice').value='0';$('courseDesc').value='';
+    $('lessonId').value='';$('lessonTitle').value='';$('lessonVideo').value='';$('lessonNotes').value='';$('lessonResource').value='';
+    await refreshCourses();
+  }catch(e){say('Delete failed: '+(e.code?e.code+' — ':'')+e.message)}
+  finally{btn.disabled=false;btn.textContent='Delete selected course'}
+};
 async function refreshCourses(){try{const s=await getDocs(collection(db,'courses'));courses=s.docs.map(d=>({id:d.id,...d.data()}));const opts='<option value="">Choose course</option>'+courses.map(c=>`<option value="${c.id}">${c.title||c.id} (${c.id})</option>`).join('');$('existingCourses').innerHTML=opts;$('accessCourse').innerHTML=opts;if(!$('existingCourses').value&&courses.length){$('existingCourses').value=courses[0].id;$('existingCourses').dispatchEvent(new Event('change'))};if(!$('existingCourses').value&&courses.length){$('existingCourses').value=courses[0].id;$('existingCourses').dispatchEvent(new Event('change'))}}catch(e){say('Could not load courses: '+e.message)}}
 $('saveCourse').onclick=async()=>{const id=val('courseId'),title=val('courseTitle');if(!id||!title){alert('Course ID aur title required.');return}try{await setDoc(doc(db,'courses',id),{title,description:val('courseDesc'),price:Number($('coursePrice').value||0),isPublished:$('coursePublished').checked,updatedAt:serverTimestamp()},{merge:true});say('Course saved: '+id);await refreshCourses()}catch(e){say('Save failed: '+e.message)}};
 $('existingCourses').onchange=()=>{const id=val('existingCourses'),c=courses.find(x=>x.id===id);if(!c)return;$('courseId').value=c.id;$('courseTitle').value=c.title||'';$('coursePrice').value=c.price||0;$('courseDesc').value=c.description||'';$('coursePublished').checked=c.isPublished===true};
@@ -79,35 +89,6 @@ $('clearCourse').onclick=()=>{['courseId','courseTitle','courseDesc'].forEach(id
 $('lessonPrice').onchange=()=>{$('customPriceWrap').classList.toggle('hidden',$('lessonPrice').value!=='custom')};
 
 
-// Live admin preview: video, title and lesson notes before saving.
-function getYoutubeId(raw){
-  try{
-    const u=new URL(raw);
-    if(u.hostname==='youtu.be'||u.hostname.endsWith('.youtu.be')) return u.pathname.split('/').filter(Boolean)[0]||'';
-    if(u.hostname.includes('youtube.com')){
-      if(u.pathname==='/watch') return u.searchParams.get('v')||'';
-      const parts=u.pathname.split('/').filter(Boolean);
-      if(['embed','shorts','live'].includes(parts[0])) return parts[1]||'';
-    }
-  }catch(e){}
-  return '';
-}
-function updateLessonPreview(){
-  const raw=val('lessonVideo'),id=getYoutubeId(raw),title=val('lessonTitle'),notes=val('lessonNotes');
-  const wrap=$('previewVideoWrap'),frame=$('previewVideo'),status=$('previewStatus');
-  $('previewLessonTitle').textContent=title||'Lesson title will appear here';
-  $('previewNotes').textContent=notes||'No notes/text entered yet.';
-  if(id){
-    frame.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'?rel=0';
-    wrap.classList.remove('hidden');
-    status.textContent='Video link format looks valid. Play the preview below to confirm it is the exact video you intend to upload.';
-  }else{
-    frame.src='about:blank';wrap.classList.add('hidden');
-    status.textContent=raw?'Could not recognize a YouTube video ID. Please paste a standard YouTube watch, youtu.be, shorts or embed URL.':'No YouTube URL entered. Notes-only lesson preview is available below.';
-  }
-}
-['lessonVideo','lessonTitle','lessonNotes'].forEach(id=>$(id).addEventListener('input',updateLessonPreview));
-$('confirmSaveFromPreview').addEventListener('click',()=>{$('saveLesson').click()});
 
 $('saveLesson').onclick=async()=>{
   const cid=val('existingCourses')||val('courseId');
@@ -126,7 +107,7 @@ $('saveLesson').onclick=async()=>{
       price,isFree:price===0,updatedAt:serverTimestamp()
     },{merge:true});
     await setDoc(doc(db,'courses',cid),{isPublished:true,updatedAt:serverTimestamp()},{merge:true});
-    say('Saved successfully! Lesson "'+title+'" is under course "'+(courses.find(c=>c.id===cid)?.title||cid)+'". Click “Open Courses page” and refresh to check it.');
+    say('Saved successfully! Lesson "'+title+'" is under course "'+(courses.find(c=>c.id===cid)?.title||cid)+'". Open Courses page and refresh to see the saved lesson.');
     $('lessonId').value=lid;$('lessonTitle').value=title;
     await refreshCourses();
   }catch(e){say('Save failed: '+(e.code?e.code+' — ':'')+e.message)}
