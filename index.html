@@ -1803,6 +1803,15 @@ p,li,h1,h2,h3,h4{overflow-wrap:break-word}
 .mobile-quick-actions .float-telegram{background:#229ed9}
 .mobile-quick-actions .float-signals{background:#0f766e}
 .mobile-quick-actions .float-youtube{background:#b91c1c}
+.mobile-quick-actions .float-recovery{
+  background:linear-gradient(135deg,#b45309,#c2410c);
+  border:1px solid rgba(255,255,255,.6);
+  box-shadow:0 6px 22px rgba(194,65,12,.34);
+}
+.mobile-quick-actions .float-recovery:hover{background:linear-gradient(135deg,#92400e,#9a3412)}
+@media(max-width:600px){
+  .mobile-quick-actions .float-recovery{font-size:11px;padding:10px 12px}
+}
 @media(max-width:600px){
   .front-nav-strip{justify-content:center!important;gap:7px!important}
   .front-nav-strip .top-enquiry-btn,.front-nav-strip .admin-shortcut-btn{
@@ -3732,6 +3741,7 @@ document.addEventListener('click', function(event){
 
 <!-- Floating quick links: Telegram group, signal/market updates page and YouTube channel -->
 <div class="mobile-quick-actions" aria-label="Quick links">
+  <a class="float-recovery" href="loss-recovery.html" aria-label="Loss recovery education and personal discussion">🧭 Loss Recovery</a>
   <a class="float-telegram" href="https://t.me/+sg1LNTAVSCQ1NGRl" target="_blank" rel="noopener noreferrer" aria-label="Join Telegram group">✈ Telegram Group</a>
   <a class="float-signals" href="signals.html" aria-label="Trading signals and market updates">📈 Signals</a>
   <a class="float-youtube" href="https://www.youtube.com/@T3STrapTrader" target="_blank" rel="noopener noreferrer" aria-label="Open YouTube channel">▶ YouTube</a>
