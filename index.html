@@ -1782,6 +1782,39 @@ p,li,h1,h2,h3,h4{overflow-wrap:break-word}
 }
 </style>
 
+<style>
+
+/* ===== YOUTUBE + SIGNAL NAV AND MOBILE FLOATING ACTIONS ===== */
+.youtube-nav-btn{background:#b91c1c!important}
+.youtube-nav-btn:hover{background:#991b1b!important}
+.signal-nav-btn{background:#0f766e!important}
+.signal-nav-btn:hover{background:#115e59!important}
+.front-nav-strip{flex-wrap:wrap!important}
+.mobile-quick-actions{
+  position:fixed;right:14px;top:42%;z-index:9998;
+  display:flex;flex-direction:column;gap:9px;
+}
+.mobile-quick-actions a{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  padding:11px 14px;border-radius:999px;color:#fff;text-decoration:none;
+  font-size:13px;font-weight:800;box-shadow:0 5px 18px rgba(15,23,42,.22);
+  border:1px solid rgba(255,255,255,.35);white-space:nowrap;
+}
+.mobile-quick-actions .float-telegram{background:#229ed9}
+.mobile-quick-actions .float-signals{background:#0f766e}
+.mobile-quick-actions .float-youtube{background:#b91c1c}
+@media(max-width:600px){
+  .front-nav-strip{justify-content:center!important;gap:7px!important}
+  .front-nav-strip .top-enquiry-btn,.front-nav-strip .admin-shortcut-btn{
+    font-size:10px!important;padding:7px 9px!important;min-height:34px!important;
+  }
+  .mobile-quick-actions{
+    right:8px;top:auto;bottom:18px;gap:7px;
+  }
+  .mobile-quick-actions a{font-size:11px;padding:10px 12px;max-width:178px}
+  body{padding-bottom:72px}
+}
+</style>
 </head>
 
 
@@ -1813,6 +1846,8 @@ p,li,h1,h2,h3,h4{overflow-wrap:break-word}
 <div class="notes-menu-wrap front-nav-strip" aria-label="Quick Navigation">
   <a class="top-enquiry-btn" href="#enquiryDialog" onclick="openEnquiryDialog(event)">📩 Enquiry</a>
   <a class="top-enquiry-btn top-telegram-btn" href="https://t.me/+sg1LNTAVSCQ1NGRl" target="_blank" rel="noopener noreferrer">✈ Telegram Group</a>
+  <a class="top-enquiry-btn youtube-nav-btn" href="https://www.youtube.com/@T3STrapTrader" target="_blank" rel="noopener noreferrer">▶ YouTube Channel</a>
+  <a class="top-enquiry-btn signal-nav-btn" href="signals.html">📈 Signals & Market Updates</a>
   <a class="top-enquiry-btn top-offline-btn" href="physical-offline-trading-coaching-jaipur.html">🏫 Physical Offline Coaching</a>
   <a class="top-enquiry-btn" href="courses.html">🎓 Courses</a>
   <a class="admin-shortcut-btn" href="control-center.html" aria-label="Private Admin Control Center" title="Private Admin Control Center">🔐 Admin</a>
@@ -3692,6 +3727,15 @@ document.addEventListener('click', function(event){
   }
 });
 </script>
+
+
+
+<!-- Floating quick links: Telegram group, signal/market updates page and YouTube channel -->
+<div class="mobile-quick-actions" aria-label="Quick links">
+  <a class="float-telegram" href="https://t.me/+sg1LNTAVSCQ1NGRl" target="_blank" rel="noopener noreferrer" aria-label="Join Telegram group">✈ Telegram Group</a>
+  <a class="float-signals" href="signals.html" aria-label="Trading signals and market updates">📈 Signals</a>
+  <a class="float-youtube" href="https://www.youtube.com/@T3STrapTrader" target="_blank" rel="noopener noreferrer" aria-label="Open YouTube channel">▶ YouTube</a>
+</div>
 
 </body>
 </html>
