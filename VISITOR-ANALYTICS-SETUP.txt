@@ -1,0 +1,46 @@
+FOREX TRAP TRADING CLASSES — FIREBASE VISITOR ANALYTICS SETUP
+==============================================================
+
+This ZIP adds:
+- visitor-analytics.html (admin-only dashboard, adapted from your working job portal dashboard)
+- A Firebase anonymous-auth visitor tracker on public HTML pages (not admin pages)
+- A link from control-center.html to the dashboard
+
+Firebase project used: forex-trading-classes
+Firebase Auth admin email in dashboard: saif.anwar1618@gmail.com
+Firestore collections:
+  webAnalyticsEvents
+  webAnalyticsSessions
+
+BEFORE DEPLOYING:
+1. Firebase Console > Authentication > Sign-in method:
+   Enable Anonymous authentication.
+   (Google sign-in must remain enabled for the admin dashboard.)
+2. Firebase Console > Firestore Database:
+   Ensure Firestore is created in this project.
+3. IMPORTANT: Merge the following rules into your EXISTING Firestore rules.
+   Do not replace all existing rules, because your leads/comments collections may
+   already have rules. See FIRESTORE-ANALYTICS-RULES.txt.
+4. Deploy these website files to the same GitHub Pages repository.
+5. Visit the public website in an incognito window, accept/allow any browser
+   prompts as applicable, browse a few pages, then sign into:
+   /visitor-analytics.html using saif.anwar1618@gmail.com.
+
+LOCATION AND PRIVACY:
+- City/country is approximate IP-derived geolocation from ipapi.co. The visitor's
+  IP is sent to ipapi.co for lookup; IP itself is not written to Firestore by this
+  tracker. City can be missing or inaccurate, and VPN/proxy may affect it.
+- Time on site is estimated from session heartbeats (30 seconds) and last-seen
+  activity; it is not an exact stopwatch and cannot reliably measure time after
+  a tab is closed or device goes offline.
+- Analytics data is stored in your own Firebase Firestore project. Apply your
+  privacy notice/consent requirements for your visitors and local law.
+- Public client-side analytics writes can be abused unless Firebase App Check,
+  Firestore rules, quotas, and monitoring are configured. Consider enabling App
+  Check after testing.
+
+NOTES:
+- Dashboard only displays data collected after the tracker is deployed; it does
+  not import historical GA4 reports.
+- Existing GA4 tag is preserved. This custom dashboard is Firestore-based and
+  separate from GA4 reports.
